@@ -11,5 +11,6 @@ return array(
 'DB_PORT' => 3306, // 端口
 'DB_PREFIX' => 'kelly_', // 数据库表前缀
 
+
 );
 ?>
