@@ -1,0 +1,89 @@
+
+<div class="content">
+    <div class="banner" id="newBanner">
+        <img src="{$bgUrl}" alt="">
+    </div>
+    <div class="vd">
+        <div class="container pt2">
+            <h1 class="page-title">{$title}</h1>
+            <div class="img-box">
+                <div class="menu">
+                    <if condition='$nav eq "3" OR $nav eq "2" '>
+                        <a href="#" class="selected">Life</a>
+                        <a href="#">Work</a>
+                    </if>
+                </div>
+                <div class="imgs">
+                    <div class="imgs-inner">
+                        <ul>
+                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
+                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
+                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
+                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
+                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
+                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
+                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
+                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
+                        </ul>
+                    </div>
+                    <a href="javascript:;" class="prev"></a>
+                    <a href="javascript:;" class="next"></a>
+                </div>
+                <if condition="$art">
+                <div class="article">
+                    <p>
+                        {$art}
+                    </p>
+                </div>
+                </if>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="alert-img">
+    <a href="javascript:;" class="close popClose"></a>
+    <div class="big-pic">
+        <img src="__PUBLIC__/images/test/01.jpg" alt="" width="550" height="400">
+       <div style="padding-top:10px;">
+           <div class="title">Kelly Ken</div>
+           <if condition="$nav eq '4' ">
+               <a href="#" class="btn-download">Download</a>
+           </if>
+       </div>
+    </div>
+</div>
+<literal>
+    <script type="text/javascript">
+        seajs.use(['jscrollpane','jscrollpaneCss','mousewheel','lightbox'],function(){
+            var imgs = $('.imgs-inner');
+            imgs.animate({opacity:1},600);
+            var imgsLi = imgs.find('li');
+            imgs.find('ul').width(imgsLi.length * imgsLi.innerWidth() );
+            imgs.jScrollPane({ showArrows: true, animateScroll: true });
+            var api = imgs.data('jsp');
+            $('.imgs .prev').bind('click',function(){
+                api.scrollBy(-( imgsLi.innerWidth() ),0);
+            });
+            $('.imgs .next').bind('click',function(){
+                api.scrollBy( imgsLi.innerWidth() ,0);
+            });
+            $('.jspScrollable').removeAttr('tabindex');
+            imgsLi.hover(function(){
+                $(this).find('.item').animate({top:-20},200,function(){
+                    $(this).find('.alt').fadeIn();
+                });
+            },function(){
+                $(this).find('.item').animate({top:0},200,function(){
+                    $(this).find('.alt').hide();
+                });
+            });
+            imgsLi.each(function(){
+                $(this).click(function(){
+                    $.lightBox('#alert-img');
+                })
+            })
+        })
+    </script>
+</literal>
+
+

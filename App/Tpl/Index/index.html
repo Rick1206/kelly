@@ -1,0 +1,67 @@
+<div class="content">
+    <div class="banner" id="newBanner">
+        <img src="__PUBLIC__/images/banner/01.jpg" alt="">
+        <img src="__PUBLIC__/images/banner/02.jpg" alt="">
+        <img src="__PUBLIC__/images/banner/03.jpg" alt="">
+        <img src="__PUBLIC__/images/banner/04.jpg" alt="">
+    </div>
+    <a href="javascript:;" id="prev" class="png"></a>
+    <a href="javascript:;" id="next" class="png"></a>
+    <div id="pag"></div>
+<literal>
+    <script type="text/javascript">
+        seajs.use("carouFredSel",function(){
+            $("#newBanner").carouFredSel({
+                responsive:true,
+                auto:true,
+                scroll:{
+                    visible:1,
+                    fx : "crossfade",
+                    timeoutDuration:4000,
+                    duration:600
+                },
+                next:"#next",
+                prev:"#prev",
+                pagination:{
+                    container:"#pag",
+                    anchorBuilder:function(nr){
+                        return "<b></b>";
+                    }
+                }
+            });
+        })
+    </script>
+</literal>
+    <div class="vd">
+        <div class="container pt1">
+            <div class="entry">
+                <div class="title t1"><a href="#" title="News"></a></div>
+                <div class="p">
+                    <p>2012-06-17 <br>
+                        <a href="#">毛一青 阚诗淇 原弓 一个梦能把你降落到哪里？</a></p>
+                    <p>2012-06-17 <br>
+                        <a href="#">毛一青 阚诗淇 原弓 一个梦能把你降落到哪里？</a></p>
+                    <p>2012-06-17 <br>
+                        <a href="#">毛一青 阚诗淇 原弓 一个梦能把你降落到哪里？</a></p>
+                </div>
+                <div class="title t2"><a href="#" title="Comment"></a></div>
+                <div class="p">
+                    <p>
+                        2012-06-17  <br>
+                        诗淇画册之序
+                    </p>　
+                    <p>
+                        2012-06-17  <br>
+                        诗淇画册之序
+                    </p>　
+                    <p>
+                        2012-06-17  <br>
+                        诗淇画册之序
+                    </p>　　
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
