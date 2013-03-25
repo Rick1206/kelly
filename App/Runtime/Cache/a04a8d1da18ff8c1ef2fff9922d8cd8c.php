@@ -10,7 +10,6 @@
 </head>
 <body>
 <div class="all">
-
     <div class="header">
         <div class="nav">
             <div class="clearfix">
@@ -35,41 +34,50 @@
                 <div class="sub-inner">
                     <a href="__ROOT__/index.php/Index/about"  <?php if(($subNav == 1)): ?>class="selected"<?php endif; ?> >Information</a>
                     <a href="__ROOT__/index.php/Index/portfolo"  <?php if(($subNav == 2)): ?>class="selected"<?php endif; ?> >Portfolio</a>
+                    
                 </div>
             </div><?php endif; ?>
         </div>
     </div>
 
-<div class="content">
-    <div class="banner" id="newBanner">
-        <img src="<?php echo ($bgUrl); ?>" alt="">
-    </div>
-    <div class="vd">
-        <div class="container pt2">
-            <h1 class="page-title"><?php echo ($title); ?></h1>
-            <div class="news">
-                <ul class="newlist">
-                    <?php $__FOR_START_24386__=0;$__FOR_END_24386__=6;for($i=$__FOR_START_24386__;$i < $__FOR_END_24386__;$i+=1){ ?><li class="row-fluid">
-                            <div class="span5">
-                                <img src="__PUBLIC__/images/test/02.jpg" alt="">
-                            </div>
-                            <div class="span7 ml">
-                                <h1>阚诗淇随“心”展现“无住无相”跨界艺术</h1>
-                                <p><a href="__SELF__?id=1">艺术家、设计师、演员、创作人、制片人，几个看似并不相关的身份，在阚诗淇身上却实现了统一……</a></p>
-                                <p>2010-07-04 14:43:29 </p>
-                            </div>
-                        </li><?php } ?>
-                </ul>
-                <div class="page" style="padding-left:20px;">
-                    <a href="#"> &lt;上一页</a>
-                    <span>5/10</span>
-                    <a href="#">下一页 &gt; </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
+<div class="content">
+	<div class="banner" id="newBanner">
+		<img src="<?php echo ($bgUrl); ?>" alt="">
+	</div>
+	<div class="vd">
+		<div class="container pt2">
+			<h1 class="page-title"><?php echo ($title); ?></h1>
+			<div class="news">
+				<ul class="newlist">
+					
+					<?php if(is_array($nlist)): $i = 0; $__LIST__ = $nlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="row-fluid">
+							<div class="span5">
+								<img src="/Public/Uploads/News/s_<?php echo ($vo["photo"]); ?>" alt="">
+							</div>
+							<div class="span7 ml">
+								<h1><?php echo ($vo["title_cn"]); ?></h1>
+								<p>
+									<a href="__URL__/news/nid/<?php echo ($vo["nid"]); ?>">
+										<?php echo (msubstr($vo["description_cn"],0,100,'utf-8',false)); ?> 
+										</a>
+								</p>
+								<p>
+									<?php echo ($vo["dateline"]); ?>
+								</p>
+							</div>
+						</li><?php endforeach; endif; else: echo "" ;endif; ?>
+				</ul>
+				<div class="page" style="padding-left:20px;">
+					 <div style="display: inline-block"><?php echo ($npage); ?></div>
+					<!-- <a href="#"> &lt;上一页</a>
+					<span>5/10</span>
+					<a href="#">下一页 &gt; </a> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 

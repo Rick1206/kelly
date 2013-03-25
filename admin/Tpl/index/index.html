@@ -1,13 +1,76 @@
-<html>
-	<head>
-		<title>hello {$name}</title>
-	</head>
-	<body>
-		hello, {$name}!
+<include file="Public/Admin/head.html" />
 
-		<volist name="data" id="vo">
-			{$vo.banner_til}
-			<br/>
-		</volist>
-	</body>
-</html>
+<body id="index" onload="">
+
+	<assign name="mnum" value="1" />
+	<include file='Public/Admin/nav.html'/>
+
+	<div class="content fn-clear">
+		<div class="leftmenu">
+			<h1>System</h1>
+			<ul>
+				<li>
+					<a href="" class="cus">System<s></s></a>
+				</li>
+
+			</ul>
+		</div>
+
+		<div class="main">
+			<p>
+				System > System List
+			</p>
+
+			<div class="blist">
+				<div class="tit">
+					System List <s><a href="__URL__/">Add System</a></s>
+				</div>
+				<form action="__APP__" method="post" accept-charset="utf-8">
+					<div class="itm">
+						<table class="tb-01">
+							<thead>
+								<tr>
+									<th width="40">所有</th>
+									<th width="215">Title</th>
+									<th width="100">添加时间</th>
+									<th width="85">Edit</th>
+								</tr>
+							</thead>
+							<tbody>
+
+								<tr>
+									<td>
+									<input type="checkbox" name="cho[]" value=''/>
+									</td>
+									<td><p>
+
+									</p></td>
+									<td></td>
+									<td><s class="s1"></s></a></td>
+								</tr>
+
+								<tr>
+									<td colspan=6>还没有任何记录</td>
+								</tr>
+
+							</tbody>
+
+							<tbody>
+								<tr>
+									<td height="25" colspan="6" id="page" class="page"> </td>
+								</tr>
+							</tbody>
+						</table>
+
+						<p style="padding:5px;text-align:right;">
+							<input type="submit" class="but2" name="" value="Delete">
+							<input type="submit" name="" value="Refresh" class="but2">
+						</p>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+	<include file='Public/Admin/foot.html' />
+</body>

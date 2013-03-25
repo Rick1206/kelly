@@ -1,66 +1,114 @@
-
 <div class="content">
-    <div class="banner" id="newBanner">
-        <img src="{$bgUrl}" alt="">
-    </div>
-    <div class="vd">
-        <div class="container pt2">
-            <h1 class="page-title">{$title}</h1>
-            <div class="row-fluid guestbook">
-                <div class="span7">
-                    <div class="pd">
-                        <for start="0" end="5">
-                            <div class="one">
-                                <div class="control">
-                                    <div class="label">Jay Kim </div>
-                                    <div class="label-for"><span>Sex:Boy</span><span>Email:JayKim@126.com</span><span>HomePage:www.Jaykim.com</span></div>
-                                </div>
-                                <div class="control fz11">
-                                    <div class="ti">Message:</div>
-                                    <div class="mes">Hi. Kelly! How are you? I’m Dr. Kim from Korea. I was so glad to meet you. I wish to see you again! ^^    (2012-9-15)</div>
-                                </div>
-                            </div>
-                        </for>
-                        <div class="page">
-                            <a href="#" class="btn">prev</a>
-                            <span class="btn">5/10</span>
-                            <a href="#" class="btn">next</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="span5">
-                    <div class="pd2">
-                        <form action="">
-                            <div class="control">
-                                <div class="label"><span>Name :</span></div>
-                                <div class="label-for"><input type="text" class="text"></div>
-                            </div>
-                            <div class="control">
-                                <div class="label"><span>Sex :</span></div>
-                                <div class="label-for"><label><input type="radio" class="radio">Male</label> <label><input type="radio" class="radio">Female</label></div>
-                            </div>
-                            <div class="control">
-                                <div class="label"><span>E-mail :</span></div>
-                                <div class="label-for"><input type="text" class="text"></div>
-                            </div>
-                            <div class="control">
-                                <div class="label"><span>Homepage :</span></div>
-                                <div class="label-for"><input type="text" class="text"></div>
-                            </div>
-                            <div class="control">
-                                <div class="label"><span>Message :</span></div>
-                                <div class="label-for"><textarea name="" class="in"></textarea></div>
-                            </div>
-                            <div class="control">
-                                <div class="label-for"><a class="btn" href="#">Send</a></div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="banner" id="newBanner">
+		<img src="{$bgUrl}" alt="">
+	</div>
+	<div class="vd">
+		<div class="container pt2">
+			<h1 class="page-title">{$title}</h1>
+			<div class="row-fluid guestbook">
+				<div class="span7">
+					<div class="pd">
+						<volist name="clist" id="vo">
+							<div class="one">
+								<div class="control">
+									<div class="label">
+										{$vo.uname}
+									</div>
+									<div class="label-for">
+										<span>Sex:<if condition="($vo.usex eq 1)">Boy<else />Girl</if> </span><span>Email:{$vo.uemail}</span><span>HomePage:{$vo.uhomepage}</span>
+									</div>
+								</div>
+								<div class="control fz11">
+									<div class="ti">
+										Message:
+									</div>
+									<div class="mes">
+										{$vo.umessage}
+										<!-- Hi. Kelly! How are you? I’m Dr. Kim from Korea. I was so glad to meet you. I wish to see you again! ^^    (2012-9-15) -->
+									</div>
+								</div>
+							</div>
+						</volist>
 
+						<div class="page">
+
+							{$cpage}
+							<!-- <a href="#" class="btn">prev</a>
+							<span class="btn">5/10</span>
+							<a href="#" class="btn">next</a> -->
+						</div>
+					</div>
+				</div>
+				<div class="span5">
+					<div class="pd2">
+						<form action="__URL__/addComment" id="formComment" method="post" accept-charset="utf-8">
+							<div class="control">
+								<div class="label">
+									<span>Name :</span>
+								</div>
+								<div class="label-for">
+									<input type="text" name="uname" class="text">
+								</div>
+							</div>
+							<div class="control">
+								<div class="label">
+									<span>Sex :</span>
+								</div>
+								<div class="label-for">
+									<label>
+										<input type="radio" name="usex" class="radio"  value="1">
+										Male</label><label>
+										<input type="radio" name="usex" class="radio"  value="0">
+										Female</label>
+								</div>
+							</div>
+							<div class="control">
+								<div class="label">
+									<span>E-mail :</span>
+								</div>
+								<div class="label-for">
+									<input type="text" name="uemail" class="text">
+								</div>
+							</div>
+							<div class="control">
+								<div class="label">
+									<span>Homepage :</span>
+								</div>
+								<div class="label-for">
+									<input type="text" name="uhomepage" class="text">
+								</div>
+							</div>
+							<div class="control">
+								<div class="label">
+									<span>Message :</span>
+								</div>
+								<div class="label-for">
+									<textarea name="umessage" class="in"></textarea>
+								</div>
+							</div>
+							<div class="control">
+								<div class="label-for">
+									<a class="btn" href="javascript:;" id="btnSend">Send</a>
+
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+<literal>
+	<script type="text/javascript">
+		seajs.use("jquery", function() {
+			$(function() {
+				$("#btnSend").click(function() {
+					$("#formComment").submit();
+				});
+			});
+		});
 
+	</script>
+</literal>
 

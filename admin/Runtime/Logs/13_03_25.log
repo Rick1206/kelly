@@ -1,0 +1,16 @@
+[ 2013-03-25T01:40:25+08:00 ] ERR: (ThinkException) 非法操作:addNews
+[ 2013-03-25T01:40:39+08:00 ] ERR: (ThinkException) 模板不存在[./Admin/Tpl/News/addNews.html]
+[ 2013-03-25T01:41:01+08:00 ] ERR: (ThinkException) 模板不存在[./Admin/Tpl/News/addNews.html]
+[ 2013-03-25T01:41:02+08:00 ] ERR: (ThinkException) 模板不存在[./Admin/Tpl/News/addNews.html]
+[ 2013-03-25T01:41:18+08:00 ] ERR: (ThinkException) 模板不存在[./Admin/Tpl/News/addNews.html]
+[ 2013-03-25T01:41:20+08:00 ] ERR: (ThinkException) 模板不存在[./Admin/Tpl/News/addNews.html]
+[ 2013-03-25T02:13:48+08:00 ] ERR: (ThinkException) 非法操作:editBannerss
+[ 2013-03-25T02:30:31+08:00 ] ERR: (ThinkException) 非法操作:editNewss
+[ 2013-03-25T02:31:09+08:00 ] ERR: (ThinkException) 非法操作:editNewss
+[ 2013-03-25T08:44:47+08:00 ] ERR: (ThinkException) 非法操作:editBannerss
+[ 2013-03-25T08:45:24+08:00 ] ERR: (ThinkException) 非法操作:editBannerss
+[ 2013-03-25T08:45:27+08:00 ] ERR: (ThinkException) 非法操作:editBannerss
+[ 2013-03-25T14:27:19+08:00 ] ERR: (ThinkException) 非法操作:addDownloads
+[ 2013-03-25T14:28:19+08:00 ] ERR: (ThinkException) 非法操作:addDownloads
+[ 2013-03-25T14:28:20+08:00 ] ERR: (ThinkException) 非法操作:addDownloads
+[ 2013-03-25T14:30:24+08:00 ] ERR: (ThinkException) 非法操作:add

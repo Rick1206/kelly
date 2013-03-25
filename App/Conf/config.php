@@ -1,19 +1,19 @@
 <?php
-return array(
-	//'配置项'=>'配置值'
-    'SHOW_PAGE_TRACE' =>true,
+return array('SHOW_PAGE_TRACE' => true, // 显示页面Trace信息
 
-    'SHOW_PAGE_TRACE' =>true, // 显示页面Trace信息
+//模板定义
+'LAYOUT_ON' => true, 
+'LAYOUT_NAME' => 'layout', 
+'TMPL_PARSE_STRING' => array('__PUBLIC__' => '/Public'),
 
+'DB_TYPE' => 'mysql', // 数据库类型
+'DB_HOST' => 'localhost', // 服务器地址
+'DB_NAME' => 'kellydata', // 数据库名
+'DB_USER' => 'root', // 用户名
+'DB_PWD' => '123456', // 密码
+//'DB_PWD' => '12010808', // 密码
+'DB_PORT' => 3306, // 端口
+'DB_PREFIX' => 'kelly_', // 数据库表前缀
+'OUTPUT_ENCODE' => false);
 
-    //模板定义
-    'LAYOUT_ON'=>true,
-    'LAYOUT_NAME'=>'layout',
-    
-	'TMPL_PARSE_STRING'  =>array(
-     '__PUBLIC__' => '/kelly/Public'
-	)
-	
-
-);
 ?>

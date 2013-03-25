@@ -10,25 +10,24 @@
 </head>
 <body>
 <div class="all">
-
     <div class="header">
         <div class="nav">
             <div class="clearfix">
                 <div class="logo"><a href="#"><img src="__PUBLIC__/images/logo.png" alt="Kelly"></a></div>
                 <ul class="nav-list">
-                    <li <if condition="($nav eq 1)"> class="selected"</if> ><a href="__ROOT__/kelly/index.php">Home</a></li>
+                    <li <if condition="($nav eq 1)"> class="selected"</if> ><a href="__ROOT__/index.php">Home</a></li>
                     <li class="separate">|</li>
-                    <li <if condition="($nav eq 2)"> class="selected"</if> ><a href="__ROOT__/kelly/index.php/Index/about">About</a></li>
+                    <li <if condition="($nav eq 2)"> class="selected"</if> ><a href="__ROOT__/index.php/Index/about">About</a></li>
                     <li class="separate">|</li>
-                    <li <if condition="($nav eq 3)"> class="selected"</if> ><a href="__ROOT__/kelly/index.php/Index/work">Work</a></li>
+                    <li <if condition="($nav eq 3)"> class="selected"</if> ><a href="__ROOT__/index.php/Index/work">Work</a></li>
                     <li class="separate">|</li>
-                    <li <if condition="($nav eq 4)"> class="selected"</if> ><a href="__ROOT__/kelly/index.php/Index/downloads">Downloads</a></li>
+                    <li <if condition="($nav eq 4)"> class="selected"</if> ><a href="__ROOT__/index.php/Index/downloads">Downloads</a></li>
                     <li class="separate">|</li>
-                    <li <if condition="($nav eq 5)"> class="selected"</if> ><a href="__ROOT__/kelly/index.php/Index/contact">Contact</a></li>
+                    <li <if condition="($nav eq 5)"> class="selected"</if> ><a href="__ROOT__/index.php/Index/contact">Contact</a></li>
                     <li class="separate">|</li>
-                    <li <if condition="($nav eq 6)"> class="selected"</if> ><a href="__ROOT__/kelly/index.php/Index/guestbook">Guestbook</a></li>
+                    <li <if condition="($nav eq 6)"> class="selected"</if> ><a href="__ROOT__/index.php/Index/guestbook">Guestbook</a></li>
                     <li class="separate">|</li>
-                    <li <if condition="($nav eq 7)"> class="selected"</if> ><a href="__ROOT__/kelly/index.php/Index/news">News</a></li>
+                    <li <if condition="($nav eq 7)"> class="selected"</if> ><a href="__ROOT__/index.php/Index/news">News</a></li>
                 </ul>
             </div>
             <if condition="($nav eq 2)">
@@ -36,6 +35,7 @@
                 <div class="sub-inner">
                     <a href="__ROOT__/index.php/Index/about"  <if condition="($subNav eq 1)"> class="selected"</if> >Information</a>
                     <a href="__ROOT__/index.php/Index/portfolo"  <if condition="($subNav eq 2)"> class="selected"</if> >Portfolio</a>
+                    
                 </div>
             </div>
             </if>

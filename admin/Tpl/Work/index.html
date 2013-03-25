@@ -1,0 +1,79 @@
+<include file="Public/Admin/head.html" />
+
+<body id="index" onload="">
+
+	<assign name="mnum" value="5" />
+	<include file='Public/Admin/nav.html'/>
+	
+	<div class="content fn-clear">
+		<div class="leftmenu">
+			<h1>Work</h1>
+			<ul>
+				<li>
+					<a href="javascript:;" class="cus">Work<s></s>
+						<a href="">Work List<s></s></a>
+						<a href="">Work Cateroy<s></s></a>
+					</a>
+				</li>
+				<li></li>
+				<!-- <li>
+					<a href="" class="cus">Work Category<s></s></a>
+				</li> -->
+			</ul>
+		</div>
+		<div class="main">
+			<p>
+				Work> WorkList
+			</p>
+			<div class="blist">
+				<div class="tit">
+					WorkList <s><a href="__URL__/addWork">Add Work</a></s>
+				</div>
+				<form action="__URL__/refresh" method="post" accept-charset="utf-8">
+					<div class="itm">
+						<table class="tb-01">
+							<thead>
+								<tr>
+									<th width="40">All</th>
+									<th width="215">Type</th>
+									<th width="100">添加时间</th>
+									<th width="85">Edit</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<volist name="list" id="vo">
+									<tr>
+										<td>
+										<input type="checkbox" name="cho[]" value='{$vo.bid}'/>
+										</td>
+										<td> {$vo.title_cn} | {$vo.title_en} </td>
+										<td>{$vo.update_date}</td>
+										<td><a href="__URL__/editworks/bid/{$vo.bid}"><s class="s1"></s></a></td>
+									</tr>
+								</volist>
+
+								<!-- <tr>
+								<td colspan=6>还没有任何记录</td>
+								</tr> -->
+							</tbody>
+
+							<tbody>
+								<tr>
+									<td height="25" colspan="6" id="page" class="page"> {$page} </td>
+								</tr>
+							</tbody>
+						</table>
+
+						<p style="padding:5px;text-align:right;">
+							<input type="submit" class="but2" name="" value="Delete">
+							<input type="submit" name="" value="Refresh" class="but2">
+						</p>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+	<include file='Public/Admin/foot.html' />
+</body>

@@ -10,7 +10,6 @@
 </head>
 <body>
 <div class="all">
-
     <div class="header">
         <div class="nav">
             <div class="clearfix">
@@ -35,73 +34,125 @@
                 <div class="sub-inner">
                     <a href="__ROOT__/index.php/Index/about"  <?php if(($subNav == 1)): ?>class="selected"<?php endif; ?> >Information</a>
                     <a href="__ROOT__/index.php/Index/portfolo"  <?php if(($subNav == 2)): ?>class="selected"<?php endif; ?> >Portfolio</a>
+                    
                 </div>
             </div><?php endif; ?>
         </div>
     </div>
 
-
 <div class="content">
-    <div class="banner" id="newBanner">
-        <img src="<?php echo ($bgUrl); ?>" alt="">
-    </div>
-    <div class="vd">
-        <div class="container pt2">
-            <h1 class="page-title"><?php echo ($title); ?></h1>
-            <div class="row-fluid guestbook">
-                <div class="span7">
-                    <div class="pd">
-                        <?php $__FOR_START_20877__=0;$__FOR_END_20877__=5;for($i=$__FOR_START_20877__;$i < $__FOR_END_20877__;$i+=1){ ?><div class="one">
-                                <div class="control">
-                                    <div class="label">Jay Kim </div>
-                                    <div class="label-for"><span>Sex:Boy</span><span>Email:JayKim@126.com</span><span>HomePage:www.Jaykim.com</span></div>
-                                </div>
-                                <div class="control fz11">
-                                    <div class="ti">Message:</div>
-                                    <div class="mes">Hi. Kelly! How are you? I’m Dr. Kim from Korea. I was so glad to meet you. I wish to see you again! ^^    (2012-9-15)</div>
-                                </div>
-                            </div><?php } ?>
-                        <div class="page">
-                            <a href="#" class="btn">prev</a>
-                            <span class="btn">5/10</span>
-                            <a href="#" class="btn">next</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="span5">
-                    <div class="pd2">
-                        <form action="">
-                            <div class="control">
-                                <div class="label"><span>Name :</span></div>
-                                <div class="label-for"><input type="text" class="text"></div>
-                            </div>
-                            <div class="control">
-                                <div class="label"><span>Sex :</span></div>
-                                <div class="label-for"><label><input type="radio" class="radio">Male</label> <label><input type="radio" class="radio">Female</label></div>
-                            </div>
-                            <div class="control">
-                                <div class="label"><span>E-mail :</span></div>
-                                <div class="label-for"><input type="text" class="text"></div>
-                            </div>
-                            <div class="control">
-                                <div class="label"><span>Homepage :</span></div>
-                                <div class="label-for"><input type="text" class="text"></div>
-                            </div>
-                            <div class="control">
-                                <div class="label"><span>Message :</span></div>
-                                <div class="label-for"><textarea name="" class="in"></textarea></div>
-                            </div>
-                            <div class="control">
-                                <div class="label-for"><a class="btn" href="#">Send</a></div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="banner" id="newBanner">
+		<img src="<?php echo ($bgUrl); ?>" alt="">
+	</div>
+	<div class="vd">
+		<div class="container pt2">
+			<h1 class="page-title"><?php echo ($title); ?></h1>
+			<div class="row-fluid guestbook">
+				<div class="span7">
+					<div class="pd">
 
+						<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="one">
+								<div class="control">
+									<div class="label">
+										<?php echo ($vo["uname"]); ?>
+									</div>
+									<div class="label-for">
+										<span>Sex:<?php if(($vo["usex"] == 1)): ?>Boy<?php else: ?>Girl<?php endif; ?> </span><span>Email:<?php echo ($vo["uemail"]); ?></span><span>HomePage:<?php echo ($vo["uhomepage"]); ?></span>
+									</div>
+								</div>
+								<div class="control fz11">
+									<div class="ti">
+										Message:
+									</div>
+									<div class="mes">
+										<?php echo ($vo["umessage"]); ?>
+										<!-- Hi. Kelly! How are you? I’m Dr. Kim from Korea. I was so glad to meet you. I wish to see you again! ^^    (2012-9-15) -->
+									</div>
+								</div>
+							</div><?php endforeach; endif; else: echo "" ;endif; ?>
+
+						<div class="page">
+
+							<?php echo ($cpage); ?>
+							<!-- <a href="#" class="btn">prev</a>
+							<span class="btn">5/10</span>
+							<a href="#" class="btn">next</a> -->
+						</div>
+					</div>
+				</div>
+				<div class="span5">
+					<div class="pd2">
+						<form action="__URL__/addComment" id="formComment" method="post" accept-charset="utf-8">
+							<div class="control">
+								<div class="label">
+									<span>Name :</span>
+								</div>
+								<div class="label-for">
+									<input type="text" name="uname" class="text">
+								</div>
+							</div>
+							<div class="control">
+								<div class="label">
+									<span>Sex :</span>
+								</div>
+								<div class="label-for">
+									<label>
+										<input type="radio" name="usex" class="radio"  value="1">
+										Male</label><label>
+										<input type="radio" name="usex" class="radio"  value="0">
+										Female</label>
+								</div>
+							</div>
+							<div class="control">
+								<div class="label">
+									<span>E-mail :</span>
+								</div>
+								<div class="label-for">
+									<input type="text" name="uemail" class="text">
+								</div>
+							</div>
+							<div class="control">
+								<div class="label">
+									<span>Homepage :</span>
+								</div>
+								<div class="label-for">
+									<input type="text" name="uhomepage" class="text">
+								</div>
+							</div>
+							<div class="control">
+								<div class="label">
+									<span>Message :</span>
+								</div>
+								<div class="label-for">
+									<textarea name="umessage" class="in"></textarea>
+								</div>
+							</div>
+							<div class="control">
+								<div class="label-for">
+									<a class="btn" href="javascript:;" id="btnSend">Send</a>
+
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+
+	<script type="text/javascript">
+		seajs.use("jquery", function() {
+			$(function() {
+				//alert(3);
+				$("#btnSend").click(function() {
+					$("#formComment").submit();
+
+				});
+			});
+		});
+
+	</script>
 
 
 

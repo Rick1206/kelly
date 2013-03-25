@@ -10,7 +10,6 @@
 </head>
 <body>
 <div class="all">
-
     <div class="header">
         <div class="nav">
             <div class="clearfix">
@@ -35,6 +34,7 @@
                 <div class="sub-inner">
                     <a href="__ROOT__/index.php/Index/about"  <?php if(($subNav == 1)): ?>class="selected"<?php endif; ?> >Information</a>
                     <a href="__ROOT__/index.php/Index/portfolo"  <?php if(($subNav == 2)): ?>class="selected"<?php endif; ?> >Portfolio</a>
+                    
                 </div>
             </div><?php endif; ?>
         </div>

@@ -10,31 +10,31 @@
 </head>
 <body>
 <div class="all">
-
     <div class="header">
         <div class="nav">
             <div class="clearfix">
                 <div class="logo"><a href="#"><img src="__PUBLIC__/images/logo.png" alt="Kelly"></a></div>
                 <ul class="nav-list">
-                    <li <?php if(($nav == 1)): ?>class="selected"<?php endif; ?> ><a href="__ROOT__/kelly/index.php">Home</a></li>
+                    <li <?php if(($nav == 1)): ?>class="selected"<?php endif; ?> ><a href="__ROOT__/index.php">Home</a></li>
                     <li class="separate">|</li>
-                    <li <?php if(($nav == 2)): ?>class="selected"<?php endif; ?> ><a href="__ROOT__/kelly/index.php/Index/about">About</a></li>
+                    <li <?php if(($nav == 2)): ?>class="selected"<?php endif; ?> ><a href="__ROOT__/index.php/Index/about">About</a></li>
                     <li class="separate">|</li>
-                    <li <?php if(($nav == 3)): ?>class="selected"<?php endif; ?> ><a href="__ROOT__/kelly/index.php/Index/work">Work</a></li>
+                    <li <?php if(($nav == 3)): ?>class="selected"<?php endif; ?> ><a href="__ROOT__/index.php/Index/work">Work</a></li>
                     <li class="separate">|</li>
-                    <li <?php if(($nav == 4)): ?>class="selected"<?php endif; ?> ><a href="__ROOT__/kelly/index.php/Index/downloads">Downloads</a></li>
+                    <li <?php if(($nav == 4)): ?>class="selected"<?php endif; ?> ><a href="__ROOT__/index.php/Index/downloads">Downloads</a></li>
                     <li class="separate">|</li>
-                    <li <?php if(($nav == 5)): ?>class="selected"<?php endif; ?> ><a href="__ROOT__/kelly/index.php/Index/contact">Contact</a></li>
+                    <li <?php if(($nav == 5)): ?>class="selected"<?php endif; ?> ><a href="__ROOT__/index.php/Index/contact">Contact</a></li>
                     <li class="separate">|</li>
-                    <li <?php if(($nav == 6)): ?>class="selected"<?php endif; ?> ><a href="__ROOT__/kelly/index.php/Index/guestbook">Guestbook</a></li>
+                    <li <?php if(($nav == 6)): ?>class="selected"<?php endif; ?> ><a href="__ROOT__/index.php/Index/guestbook">Guestbook</a></li>
                     <li class="separate">|</li>
-                    <li <?php if(($nav == 7)): ?>class="selected"<?php endif; ?> ><a href="__ROOT__/kelly/index.php/Index/news">News</a></li>
+                    <li <?php if(($nav == 7)): ?>class="selected"<?php endif; ?> ><a href="__ROOT__/index.php/Index/news">News</a></li>
                 </ul>
             </div>
             <?php if(($nav == 2)): ?><div class="sub">
                 <div class="sub-inner">
                     <a href="__ROOT__/index.php/Index/about"  <?php if(($subNav == 1)): ?>class="selected"<?php endif; ?> >Information</a>
                     <a href="__ROOT__/index.php/Index/portfolo"  <?php if(($subNav == 2)): ?>class="selected"<?php endif; ?> >Portfolio</a>
+                    
                 </div>
             </div><?php endif; ?>
         </div>
@@ -42,64 +42,64 @@
 
 <div class="content">
     <div class="banner" id="newBanner">
-        <img src="__PUBLIC__/images/banner/01.jpg" alt="">
+    	<?php if(is_array($blist)): $i = 0; $__LIST__ = $blist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><img src="Public/Uploads/Banners/<?php echo ($vo["photo"]); ?>" alt="<?php echo ($vo["title_cn"]); ?>"><?php endforeach; endif; else: echo "" ;endif; ?>
+        <!-- <img src="__PUBLIC__/images/banner/01.jpg" alt="">
         <img src="__PUBLIC__/images/banner/02.jpg" alt="">
         <img src="__PUBLIC__/images/banner/03.jpg" alt="">
-        <img src="__PUBLIC__/images/banner/04.jpg" alt="">
+        <img src="__PUBLIC__/images/banner/04.jpg" alt=""> -->
     </div>
     <a href="javascript:;" id="prev" class="png"></a>
     <a href="javascript:;" id="next" class="png"></a>
     <div id="pag"></div>
 
     <script type="text/javascript">
-        seajs.use("carouFredSel",function(){
-            $("#newBanner").carouFredSel({
-                responsive:true,
-                auto:true,
-                scroll:{
-                    visible:1,
-                    fx : "crossfade",
-                    timeoutDuration:4000,
-                    duration:600
-                },
-                next:"#next",
-                prev:"#prev",
-                pagination:{
-                    container:"#pag",
-                    anchorBuilder:function(nr){
-                        return "<b></b>";
-                    }
-                }
-            });
-        })
+		seajs.use("carouFredSel", function() {
+			$("#newBanner").carouFredSel({
+				responsive : true,
+				auto : true,
+				scroll : {
+					visible : 1,
+					fx : "crossfade",
+					timeoutDuration : 4000,
+					duration : 600
+				},
+				next : "#next",
+				prev : "#prev",
+				pagination : {
+					container : "#pag",
+					anchorBuilder : function(nr) {
+						return "<b></b>";
+					}
+				}
+			});
+		})
     </script>
 
     <div class="vd">
         <div class="container pt1">
             <div class="entry">
-                <div class="title t1"><a href="#" title="News"></a></div>
+                <div class="title t1"><a href="__APP__/Index/news" title="News"></a></div>
                 <div class="p">
-                    <p>2012-06-17 <br>
+                	<?php if(is_array($nlist)): $i = 0; $__LIST__ = $nlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><p><?php echo ($vo["dateline"]); ?><br>
+                        <a href="__APP__/Index/news/nid/<?php echo ($vo["nid"]); ?>"><?php echo ($vo["title_cn"]); ?></a></p><?php endforeach; endif; else: echo "" ;endif; ?>
+                    <!-- <p>2012-06-17 <br>
                         <a href="#">毛一青 阚诗淇 原弓 一个梦能把你降落到哪里？</a></p>
                     <p>2012-06-17 <br>
-                        <a href="#">毛一青 阚诗淇 原弓 一个梦能把你降落到哪里？</a></p>
-                    <p>2012-06-17 <br>
-                        <a href="#">毛一青 阚诗淇 原弓 一个梦能把你降落到哪里？</a></p>
+                        <a href="#">毛一青 阚诗淇 原弓 一个梦能把你降落到哪里？</a></p> -->
                 </div>
-                <div class="title t2"><a href="#" title="Comment"></a></div>
+                <div class="title t2"><a href="__APP__/Index/guestbook" title="Comment"></a></div>
                 <div class="p">
-                    <p>
+                	<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><p>
+                        <?php echo ($vo["dateline"]); ?> <br><?php echo ($vo["title_cn"]); ?>
+                    </p>　<?php endforeach; endif; else: echo "" ;endif; ?>
+                    <!-- <p>
                         2012-06-17  <br>
                         诗淇画册之序
                     </p>　
                     <p>
                         2012-06-17  <br>
                         诗淇画册之序
-                    </p>　
-                    <p>
-                        2012-06-17  <br>
-                        诗淇画册之序
-                    </p>　　
+                    </p> -->　　
                 </div>
             </div>
         </div>

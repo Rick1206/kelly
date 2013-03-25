@@ -1,0 +1,3 @@
+.choose_panel{width:600px; overflow:hidden; border:1px solid #C6C6C6; padding:15px; background-color:#000;}
+.choose_panel ul li{ display:inline-block; margin-right:10px; margin-bottom:8px;}
+.choose{ cursor:pointer;}
