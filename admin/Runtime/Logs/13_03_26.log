@@ -5,3 +5,26 @@
 [ 2013-03-26T15:19:14+08:00 ] ERR: (ThinkException) 非法操作:addWork
 [ 2013-03-26T15:21:30+08:00 ] ERR: (ThinkException) 非法操作:addWork
 [ 2013-03-26T15:21:34+08:00 ] ERR: (ThinkException) 模板不存在[./Admin/Tpl/Work/addcategory.html]
+[ 2013-03-26T15:35:37+08:00 ] ERR: (ThinkException) 非法操作:add
+[ 2013-03-26T15:35:52+08:00 ] ERR: (ThinkException) 非法操作:add
+[ 2013-03-26T15:41:20+08:00 ] ERR: (ThinkException) 非法操作:editCommentss
+[ 2013-03-26T15:42:42+08:00 ] ERR: (ThinkException) 非法操作:editCommentss
+[ 2013-03-26T15:43:08+08:00 ] ERR: (ThinkException) 非法操作:editCommentss
+[ 2013-03-26T16:02:13+08:00 ] ERR: (ThinkException) XML标签语法错误 : condition=($data[0].usex eq 1)
+[ 2013-03-26T16:02:13+08:00 ] ERR: (ThinkException) XML标签语法错误 : condition=($data[0].usex eq 1)
+[ 2013-03-26T16:02:13+08:00 ] ERR: (ThinkException) XML标签语法错误 : condition=($data[0].usex eq 1)
+[ 2013-03-26T16:02:13+08:00 ] ERR: (ThinkException) XML标签语法错误 : condition=($data[0].usex eq 1)
+[ 2013-03-26T16:02:13+08:00 ] ERR: (ThinkException) XML标签语法错误 : condition=($data[0].usex eq 1)
+[ 2013-03-26T16:02:13+08:00 ] ERR: (ThinkException) XML标签语法错误 : condition=($data[0].usex eq 1)
+[ 2013-03-26T16:02:13+08:00 ] ERR: (ThinkException) XML标签语法错误 : condition=($data[0].usex eq 1)
+[ 2013-03-26T16:02:13+08:00 ] ERR: (ThinkException) XML标签语法错误 : condition=($data[0].usex eq 1)
+[ 2013-03-26T16:02:13+08:00 ] ERR: (ThinkException) XML标签语法错误 : condition=($data[0].usex eq 1)
+[ 2013-03-26T16:02:13+08:00 ] ERR: (ThinkException) XML标签语法错误 : condition=($data[0].usex eq 1)
+[ 2013-03-26T16:02:13+08:00 ] ERR: (ThinkException) XML标签语法错误 : condition=($data[0].usex eq 1)
+[ 2013-03-26T16:02:13+08:00 ] ERR: (ThinkException) XML标签语法错误 : condition=($data[0].usex eq 1)
+[ 2013-03-26T16:06:12+08:00 ] ERR: (ThinkException) 非法操作:on
+[ 2013-03-26T16:06:47+08:00 ] ERR: (ThinkException) 非法操作:on
+[ 2013-03-26T16:07:11+08:00 ] ERR: (ThinkException) 非法操作:on
+[ 2013-03-26T16:32:47+08:00 ] ERR: (ThinkException) 无法加载模块:Banners
+[ 2013-03-26T16:40:54+08:00 ] ERR: (ThinkException) 无法加载模块:Banners
+[ 2013-03-26T16:41:14+08:00 ] ERR: (ThinkException) 无法加载模块:Banners

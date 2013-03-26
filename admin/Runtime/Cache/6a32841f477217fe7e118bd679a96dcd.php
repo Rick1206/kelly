@@ -85,6 +85,7 @@
 								</tr>
 							</thead>
 							<tbody>
+								
 								<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 										<td>
 										<input type="checkbox" name="cho[]" value='<?php echo ($vo["wid"]); ?>'/>
@@ -94,6 +95,7 @@
 										<td><?php echo ($vo["dateline"]); ?></td>
 										<td><a href="__URL__/editworks/wid/<?php echo ($vo["wid"]); ?>"><s class="s1"></s></a></td>
 									</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+								
 								<!-- <tr>
 								<td colspan=6>还没有任何记录</td>
 								</tr> -->

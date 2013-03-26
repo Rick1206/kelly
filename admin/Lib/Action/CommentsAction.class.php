@@ -19,6 +19,20 @@ class CommentsAction extends Action {
 		}
 	}
 	
+	public function editcomments(){
+		
+		$Form = D('comments');
+		
+		$map["cid"] = $this->_param("cid");
+		
+		$result = $Form -> where($map) -> select();
+		
+		$this -> assign('data', $result);
+		
+		$this -> display();
+		
+	}
+	
 	public function getData() {
 		$Data = D('comments');
 		import('ORG.Util.Page');

@@ -19,20 +19,13 @@ class DownloadsAction extends Action {
 
 	public function getData() {
 		$Data = D('downloads');
-		// 实例化Data数据对象"
 		import('ORG.Util.Page');
-		// 导入分页类
 		$map = "";
 		$count = $Data -> where($map) -> count();
-		// 查询满足要求的总记录数 $map表示查询条件
 		$Page = new Page($count);
-		// 实例化分页类 传入总记录数
 		$show = $Page -> show();
-		// 分页显示输出
 		$list = $Data -> where($map) -> order('dateline') -> limit($Page -> firstRow . ',' . $Page -> listRows) -> select();
-		// 进行分页数据查询
 		$this -> assign('list', $list);
-		// 赋值数据集
 		$this -> assign('page', $show);
 	}
 
@@ -61,13 +54,73 @@ class DownloadsAction extends Action {
 		$down -> dateline = $_POST['dateline'];
 		$down -> orderby = $_POST['orderby'];
 		$down -> photo = $info[0]['savename'];
-		
-		if($down -> add()){
+
+		if ($down -> add()) {
 			$this -> success('数据保存成功！');
-		}else{
+		} else {
 			$this -> error('数据保存失败！');
 		}
+
+	}
+
+	public function editdownloads() {
+
+		$Form = D('downloads');
+
+		$map["did"] = $this -> _param("did");
+
+		$result = $Form -> where($map) -> select();
+
+		$this -> assign('data', $result);
+
+		$this -> display();
+
+	}
+	
+	public function edit() {
 		
+		$map["did"] = $_POST['did'];
+		$Form = D('downloads');
+		$imgurl =  $Form ->field("photo")-> where($map) ->find();
+
+		import('ORG.Net.UploadFile');
+		$upload = new UploadFile();
+		$upload -> allowExts = array('jpg', 'gif', 'png', 'jpeg');
+		$upload -> savePath = 'Public/Uploads/Downloads/';
+		$upload -> thumb = true;
+		$upload -> imageClassPath = 'ORG.Util.Image';
+		$upload -> thumbMaxWidth = '50,162';
+		$upload -> thumbMaxHeight = '50,108';
+		$upload -> thumbPrefix = 's_';
+
+		if (!$upload -> upload()) {
+			if($upload -> getErrorMsg()=="没有选择上传文件"){
+				$data['photo'] = $_POST['photo'];
+			}else{
+				$this -> error($upload -> getErrorMsg());
+			}
+		} else {
+			
+			$info = $upload -> getUploadFileInfo();
+				$data['photo'] = $info[0]['savename'];
+				@unlink('Public/Uploads/Downloads/s_'.$imgurl["photo"]);
+				@unlink('Public/Uploads/Downloads/'.$imgurl["photo"]);
+			}
+		
+		$data["title_cn"] = $_POST['title_cn'];
+		$data["title_en"] = $_POST['title_en'];
+		$data["dateline"] = $_POST['dateline'];
+	
+		$result = $Form -> where($map) -> save($data);
+		
+		if ($result) {
+			$this -> success('操作成功');
+		} else {
+			$this -> error('操作失败');
+		}
+		
+		
+
 	}
 
 }

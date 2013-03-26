@@ -2,30 +2,29 @@
 
 <body id="index" onload="">
 	
-	<assign name="mnum" value="2" />
+	<assign name="mnum" value="4" />
 	<include file='Public/Admin/nav.html'/>
 	
 	<div class="content fn-clear">
 		<div class="leftmenu">
-			<h1>Banners</h1>
+			<h1>Comments</h1>
 			<ul>
 				<li>
-					<a href="__APP__/Banners/index" class="cus">Banners<s></s></a>
+					<a href="__APP__/Comments/index" class="cus">Comments<s></s></a>
 				</li>
 			</ul>
 		</div>
-
 		<div class="main">
 			<p>
-				Banners > Banners List
+				Comments > Comments List > Edit
 			</p>
 			<div class="blist">
 				<div class="tit">
-					<!-- Banners List<s>Add Banners</s> -->
-					Banners List
+					<!-- Comments List<s>Add Comments</s> -->
+					Comments List
 				</div>
 				<div class="itm">
-					<form action="<{$url}>/edit" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+					<!-- <form action="__APP__/Comments/index" method="post" accept-charset="utf-8" enctype="multipart/form-data"> -->
 					<table class="tb-02">
 						<thead>
 							<tr>
@@ -37,46 +36,38 @@
 								<td colspan="4" height="10"></td>
 							</tr>
 							<tr>
-								<td width="60">上架日期:</td>
+								<td width="60">日期:</td>
 								<td><span class="input01">
-									<input type="text" name="" id="smidate" readOnly="true" >
+									<input type="text" name="dateline" id="smidate" readOnly="true" value="{$data[0].dateline}" >
 									<span class="icn1"></span></span></td>
-								<td width="60">礼品名称:</td>
+								<td width="60">名称:</td>
 								<td><span class="input01">
-									<input type="text" name="gname" value="<{$data[0].gname}>">
+									<input type="text" name="uname" value="{$data[0].uname}">
+								</span></td>
+							</tr>
+							
+							<tr>
+								<td width="60">性别 </td>
+									
+									<td><span class="input01">
+									<input type="text" name="uname" value="<if condition="($data[0]['usex'])">男<else />女</if>">
+								</span></td>
+									
+									
+								
+									
+								<td>Email:</td>
+								<td><span class="input01">
+									<input type="text" name="points" value="{$data[0].uemail}">
 								</span></td>
 							</tr>
 							<tr>
-								<td>分类:</td>
-								<td height="25">
-								<select style="width:210px;">
-									<option>Category1</option><option>Category2</option><option>Category3</option>
-								</select></td>
-								<td>图片:</td>
+								<td>Homepage:</td>
 								<td><span class="input01">
-									<input type="file" name="gthumb" value="<{$data[0].gthumb}>">
-									<span class="icn2"></span></span></td>
-							</tr>
-							<tr>
-								<td colspan="2">是否热门? <label>
-									<input type="radio" name="a"/>
-									No</label><label>
-									<input type="radio"  name="a"/>
-									Yes</label></td>
-								<td>Thumbnail:</td>
-								<td><span class="input01">
-									<input type="text" name="">
-									<span class="icn2"></span></span></td>
-							</tr>
-							<tr>
-								<td>礼品积分:</td>
-								<td><span class="input01">
-									<input type="text" name="points" value="<{$data[0].points}>">
+									<input type="text" name="" value="{$data[0].uhomepage}">
 								</span></td>
-								<td>Description:</td>
-								<td><span class="input01">
-									<input type="text" name="">
-								</span></td>
+								<td></td>
+								<td></td>
 							</tr>
 							<tr>
 								<td colspan="4" height="10"></td>
@@ -85,67 +76,42 @@
 					</table>
 					<div style="padding:20px 0;">
 						<div class="tabs">
-							<a href="javascript:void(0);">English</a><a href="javascript:void(0);">Chinese</a>
+							Message
+							<!-- <a href="javascript:void(0);">English</a><a href="javascript:void(0);">Chinese</a> -->
 						</div>
-						<div class="panes" style="height:353px;">
+						<div class="panes" >
 							<table class="tb-02" style="border-top: none;">
 								<tbody>
-									<tr>
+									<!-- <tr>
 										<td height="40" width="100" style="text-align:center">Title:</td>
 										<td><span class="input01" style="width:480px;">
 											<input type="text" name=""  style="width:480px;">
 										</span></td>
-									</tr>
+									</tr> -->
 									<tr>
 										<td colspan="2">
 										<div class="bd">
-											<textarea name="edit"></textarea></div>
+											<textarea name="edit">{$data[0].umessage}</textarea></div>
 										</td>
 									</tr>
-									<tr>
-										<td height="40" width="100" style="text-align:center">Download:</td>
-										<td>
-										<input type="file" id="dload" />
-										</td>
-									</tr>
+									
 								</tbody>
 							</table>
-							<table class="tb-02" style="border-top: none;">
-								<tbody>
-									<tr>
-										<td height="40" width="100" style="text-align:center">Title:</td>
-										<td><span class="input01" style="width:480px;">
-											<input type="text" name=""  style="width:480px;">
-										</span></td>
-									</tr>
-									<tr>
-										<td colspan="2">
-										<div class="bd">
-											<textarea name="edit"></textarea></div>
-										</td>
-									</tr>
-									<tr>
-										<td height="40" width="100" style="text-align:center">Download:</td>
-										<td>
-										<input type="file" id="dload" />
-										</td>
-									</tr>
-								</tbody>
-							</table>
+							
 						</div>
 					</div>
 					<p style="padding-top: 10px">
-						<input type="submit" name="" value="保存" class="but1">
-						<input type="hidden" name="gid" value="<{$gid}>"/>	
-						<!-- <input type="submit" class="but2" name="" value="Delete"> -->
+						<a href="__APP__/Comments/index"><input type="submit" name="" value="返回" class="but1">	</a>				
+					
 					</p>
-					</form>
+					<!-- </form> -->
 				</div>
 			</div>
 
 		</div>
 	</div>
-	<{include file='public/foot.html' }>
+	
+	<include file='Public/Admin/foot.html' />
 
 	<script type="text/javascript">
 		$(function() {

@@ -37,16 +37,16 @@
 				<a href="__APP__/Banner/index" class="<?php if(($mnum==2)): ?>a-active<?php endif; ?>">BANNERS</a>
 			</li>
 			<li>
-				<a href="__APP__/news/index" class="<?php if(($mnum==3)): ?>a-active<?php endif; ?>">NEWS</a>
+				<a href="__APP__/News/index" class="<?php if(($mnum==3)): ?>a-active<?php endif; ?>">NEWS</a>
 			</li>
 			<li>
 				<a href="__APP__/Comments/index" class="<?php if(($mnum==4)): ?>a-active<?php endif; ?>">COMMENTS</a>
 			</li>
 			<li>
-				<a href="__APP__/news/index" class="<?php if(($mnum==5)): ?>a-active<?php endif; ?>">WORK</a>
+				<a href="__APP__/Work/index" class="<?php if(($mnum==5)): ?>a-active<?php endif; ?>">WORK</a>
 			</li>
 			<li>
-				<a href="__APP__/news/index" class="<?php if(($mnum==6)): ?>a-active<?php endif; ?>">DOWNLOADS</a>
+				<a href="__APP__/Downloads/index" class="<?php if(($mnum==6)): ?>a-active<?php endif; ?>">DOWNLOADS</a>
 			</li>
 		</ul>
 	</div>
@@ -57,14 +57,8 @@
 			<h1>Banners</h1>
 			<ul>
 				<li>
-					<a href="__URL__/index" class="cus">Banners<s></s></a>
+					<a href="__APP__/Banner/index" class="cus">Banners<s></s></a>
 				</li>
-				<!-- <li>
-				<a href="">Media Kit<s></s></a>
-				</li>
-				<li>
-				<a href="">Brochure<s></s></a>
-				</li> -->
 			</ul>
 		</div>
 

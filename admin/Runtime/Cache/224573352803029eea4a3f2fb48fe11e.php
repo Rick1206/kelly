@@ -94,37 +94,17 @@
 								</span></td>
 							</tr>
 							<tr>
-								<!-- <td>分类:</td>
-								<td height="25">
-								<select style="width:210px;">
-									<option>Category1</option><option>Category2</option><option>Category3</option>
-								</select></td> -->
+								
 								<td>图片:</td>
 								<td><span class="input01">
-									<input type="file" name="photo" value="/Public/Uploads/News/<?php echo ($data[0]["photo"]); ?>">
-									<!-- <span class="icn2"></span> --></span></td>
+									<input type="file" name="src" value="<?php echo ($data[0]["photo"]); ?>">
+									<input type="hidden" name="photo" value="<?php echo ($data[0]["photo"]); ?>">
+									</span></td>
+									
+									<td></td>
+									<td></td>
 							</tr>
-							<!-- <tr>
-								<td colspan="2">是否热门? <label>
-									<input type="radio" name="a"/>
-									No</label><label>
-									<input type="radio"  name="a"/>
-									Yes</label></td>
-								<td>Thumbnail:</td>
-								<td><span class="input01">
-									<input type="text" name="">
-									<span class="icn2"></span></span></td>
-							</tr> -->
-							<!-- <tr>
-								<td>礼品积分:</td>
-								<td><span class="input01">
-									<input type="text" name="points" value="<<?php echo ($data[0]["points"]); ?>>">
-								</span></td>
-								<td>Description:</td>
-								<td><span class="input01">
-									<input type="text" name="">
-								</span></td>
-							</tr> -->
+							
 							<tr>
 								<td colspan="4" height="10"></td>
 							</tr>
@@ -171,12 +151,7 @@
 											<textarea class="txtedit" name="description_en"><?php echo ($data[0]["description_en"]); ?></textarea></div>
 										</td>
 									</tr>
-									<!-- <tr>
-										<td height="40" width="100" style="text-align:center">Download:</td>
-										<td>
-										<input type="file" id="dload" />
-										</td>
-									</tr> -->
+									
 								</tbody>
 							</table>
 						</div>
@@ -184,7 +159,6 @@
 					<p style="padding-top: 10px">
 						<input type="submit" name="" value="保存" class="but1">
 						<input type="hidden" name="nid" value="<?php echo ($data[0]["nid"]); ?>"/>	
-						<!-- <input type="submit" class="but2" name="" value="Delete"> -->
 					</p>
 					</form>
 				</div>

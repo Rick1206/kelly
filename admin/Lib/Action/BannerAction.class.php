@@ -20,20 +20,13 @@ class BannerAction extends Action {
 
 	public function getData() {
 		$Data = D('banners');
-		// 实例化Data数据对象"
 		import('ORG.Util.Page');
-		// 导入分页类
 		$map = "";
 		$count = $Data -> where($map) -> count();
-		// 查询满足要求的总记录数 $map表示查询条件
 		$Page = new Page($count);
-		// 实例化分页类 传入总记录数
 		$show = $Page -> show();
-		// 分页显示输出
 		$list = $Data -> where($map) -> order('UPDATE_DATE') -> limit($Page -> firstRow . ',' . $Page -> listRows) -> select();
-		// 进行分页数据查询
 		$this -> assign('list', $list);
-		// 赋值数据集
 		$this -> assign('page', $show);
 	}
 
@@ -67,6 +60,25 @@ class BannerAction extends Action {
 	public function edit() {
 		$Form = D('banners');
 		$map["bid"] = $_POST['bid'];
+		
+		import('ORG.Net.UploadFile');
+		$upload = new UploadFile();
+		$upload -> allowExts = array('jpg', 'gif', 'png', 'jpeg');
+		$upload -> savePath = 'Public/Uploads/Banners/';
+		
+		if (!$upload -> upload()) {
+			if($upload -> getErrorMsg()=="没有选择上传文件"){
+				$data['photo'] = $_POST['photo'];
+			}else{
+				$this -> error($upload -> getErrorMsg());
+			}
+		} else {
+			
+			$info = $upload -> getUploadFileInfo();
+				$data['photo'] = $info[0]['savename'];
+				@unlink('Public/Uploads/Banners/'.$imgurl["photo"]);
+			}
+		
 		$data["title_cn"] = $_POST['title_cn'];
 		$data["title_en"] = $_POST['title_en'];
 		$data["update_date"] = $_POST['update_date'];

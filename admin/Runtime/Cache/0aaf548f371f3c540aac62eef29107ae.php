@@ -57,9 +57,8 @@
 			<h1>Banners</h1>
 			<ul>
 				<li>
-					<a href="" class="cus">Banners<s></s></a>
+					<a href="__APP__/Banner/index" class="cus">Banners<s></s></a>
 				</li>
-
 			</ul>
 		</div>
 

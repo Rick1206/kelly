@@ -30,9 +30,6 @@ class WorkAction extends Action {
 		$show = $Page -> show();
 		$list = $Data -> Relation(true) -> where($map) -> order('dateline') -> limit($Page -> firstRow . ',' . $Page -> listRows) -> select();
 		$this -> assign('list', $list);
-		
-		//dump($list);
-		
 		$this -> assign('page', $show);
 	}
 
@@ -71,17 +68,78 @@ class WorkAction extends Action {
 		$work -> dateline = $_POST['dateline'];
 		$work -> orderby = $_POST['orderby'];
 		$work -> photo = $info[0]['savename'];
-		
 		$work -> add();
-		// 写入用户数据到数据库
+		
 		$this -> success('数据保存成功！');
 		
 	}
 	
 	
-	public function editbanners() {
+	public function editworks() {
+	
+		$Form = D('work');
+		
+	
+		
+		$map["wid"] = $this->_param("wid");
+		
+		$result = $Form -> where($map) -> select();
+		
+		$this -> assign('data', $result);
+		
+			$this->getcategory();
 		$this -> display();
+
 	}
+	
+	public function editw(){
+		$Form = D('work');
+		$map["wid"] = $_POST['wid'];
+
+		import('ORG.Net.UploadFile');
+		$upload = new UploadFile();
+		$upload -> allowExts = array('jpg', 'gif', 'png', 'jpeg');
+		$upload -> savePath = 'Public/Uploads/Works/';
+		$upload -> thumb = true;
+		$upload -> imageClassPath = 'ORG.Util.Image';
+		$upload -> thumbMaxWidth = '50,162';
+		$upload -> thumbMaxHeight = '50,108';
+		$upload -> thumbPrefix = 's_';
+
+		if (!$upload -> upload()) {
+			if ($upload -> getErrorMsg() == "没有选择上传文件") {
+				$data['photo'] = $_POST['photo'];
+			} else {
+				$this -> error($upload -> getErrorMsg());
+			}
+		} else {
+			$info = $upload -> getUploadFileInfo();
+			$data['photo'] = $info[0]['savename'];
+			@unlink('Public/Uploads/Works/s_' . $imgurl["photo"]);
+			@unlink('Public/Uploads/Works/' . $imgurl["photo"]);
+		}
+		
+		$data["cid"] = $_POST['cid'];
+		$data["title_cn"] = $_POST['title_cn'];
+		$data["title_en"] = $_POST['title_en'];
+		$data["dateline"] = $_POST['dateline'];
+		$data["description_cn"] = $_POST['description_cn'];
+		$data["description_en"] = $_POST['description_en'];
+		$data["dateline"] = $_POST['dateline'];
+		$data["orderby"] = $_POST['orderby'];
+		
+		
+		$result = $Form -> where($map) -> save($data);
+
+		if ($result) {
+			$this -> success('操作成功');
+		} else {
+			$this -> error('写入错误');
+		}
+
+	}
+	
+	
 
 	public function wrefresh() {
 		$banners = D('work');
@@ -155,28 +213,21 @@ class WorkAction extends Action {
 	
 	public function addc(){
 		
-		$work = D("work_catgory");
+		$work = D("work_category");
 		
 		$work -> create();
 		
-		//$work -> cid = $_POST["cid"];
-		$work -> title_cn = $_POST['title_cn'];
-		$work -> title_en = $_POST['title_en'];
-		$work -> description_en =  $_POST['description_en'];
-		$work -> description_cn =  $_POST['description_cn'];
+		$work -> category_name = $_POST['category_name'];
+		$work -> description = $_POST['description'];
 		$work -> dateline = $_POST['dateline'];
 		$work -> orderby = $_POST['orderby'];
-		$work -> photo = $info[0]['savename'];
 		
-		$work -> add();
-		// 写入用户数据到数据库
-		$this -> success('数据保存成功！');
-		
-		
+		if($work -> add()){
+			$this -> success('数据保存成功！');
+		}else{
+			$this -> error('数据保存失败！');
+		}
 	}
-	
-	
-	
-	
+
 
 }

@@ -70,7 +70,7 @@
 
 			<div class="blist">
 				<div class="tit">
-					CommentsList <s><a href="__URL__/addComments">Add Comments</a></s>
+					CommentsList <s><!-- <a href="__URL__/addComments">Add Comments</a> --></s>
 				</div>
 				<form action="__URL__/refresh" method="post" accept-charset="utf-8">
 					<div class="itm">
@@ -78,8 +78,8 @@
 							<thead>
 								<tr>
 									<th width="40">All</th>
-									<th width="215">Title</th>
-									<th width="100">UpdateTime</th>
+									<th width="215">Name</th>
+									<th width="100">AddTime</th>
 									<th width="85">Edit</th>
 								</tr>
 							</thead>
@@ -87,13 +87,13 @@
 							<tbody>
 								<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 										<td>
-										<input type="checkbox" name="cho[]" value='<?php echo ($vo["bid"]); ?>'/>
+										<input type="checkbox" name="cho[]" value='<?php echo ($vo["cid"]); ?>'/>
 										</td>
-										<td> <?php echo ($vo["title_cn"]); ?> | <?php echo ($vo["title_en"]); ?> </td>
-										<td><?php echo ($vo["update_date"]); ?></td>
-										<td><a href="__URL__/editCommentss/bid/<?php echo ($vo["bid"]); ?>"><s class="s1"></s></a></td>
+										<td> <?php echo ($vo["uname"]); ?> </td>
+										<td><?php echo ($vo["dateline"]); ?></td>
+										<td><a href="__URL__/editcomments/cid/<?php echo ($vo["cid"]); ?>"><s class="s1"></s></a></td>
 									</tr><?php endforeach; endif; else: echo "" ;endif; ?>
-
+								
 								<!-- <tr>
 								<td colspan=6>还没有任何记录</td>
 								</tr> -->

@@ -57,7 +57,7 @@
 			<h1>Banners</h1>
 			<ul>
 				<li>
-					<a href="__APP__/Banners/index" class="cus">Banners<s></s></a>
+					<a href="__APP__/Banner/index" class="cus">Banners<s></s></a>
 				</li>
 			</ul>
 		</div>
@@ -94,10 +94,10 @@
 								</span></td>
 							</tr>
 							<tr>
-								
 								<td>图片:</td>
 								<td><span class="input01">
-									<input type="file" name="photo" value="<<?php echo ($data[0]["photo"]); ?>>">
+									<input type="file" name="src" value="<?php echo ($data[0]["photo"]); ?>">
+									<input type="hidden" name="photo" value="<?php echo ($data[0]["photo"]); ?>">
 									<!-- <span class="icn2"></span> --></span></td>
 								 <td></td>
 								<td height="25">
