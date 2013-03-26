@@ -1,13 +1,60 @@
-<include file="Public/Admin/head.html" />
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Kelly - cms</title>
+<link href="__PUBLIC__/css/base2012.css" type="text/css" rel="stylesheet">
+<link href="__PUBLIC__/css/common.css" type="text/css" rel="stylesheet">
+<link href="__PUBLIC__/css/jquery.cleditor.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/jquery.calendar.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/jquery.calendar.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/jquery.selectStyle.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.cleditor.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/fileEveryWhere.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/cal.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.select.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/tabs.js"></script>
+</head>
 
 <body id="index" onload="">
 
-	<assign name="mnum" value="5" />
-	<include file='Public/Admin/nav.html'/>
+	<?php $mnum = '5'; ?>
+	<div class="header">
+	<div class="wrap">
+		<div class="logo2">
+			<a href="" style="display: block;height: 67px;"></a>
+			<p class="user">
+				Hello,admin <a href="__APP__/Index/logout">Login out ></a><a href="__ROOT__/index.php"  target='_blank' >Index ></a>
+			</p>
+			<s></s>
+		</div>
+		<ul class="nav">
+			<li>
+				<a href="#" class="<?php if(($mnum==1)): ?>a-active<?php endif; ?>" >System</a>
+			</li>
+			<li>
+				<a href="__APP__/Banner/index" class="<?php if(($mnum==2)): ?>a-active<?php endif; ?>">BANNERS</a>
+			</li>
+			<li>
+				<a href="__APP__/News/index" class="<?php if(($mnum==3)): ?>a-active<?php endif; ?>">NEWS</a>
+			</li>
+			<li>
+				<a href="__APP__/Comments/index" class="<?php if(($mnum==4)): ?>a-active<?php endif; ?>">COMMENTS</a>
+			</li>
+			<li>
+				<a href="__APP__/Work/index" class="<?php if(($mnum==5)): ?>a-active<?php endif; ?>">WORK</a>
+			</li>
+			<li>
+				<a href="__APP__/Downloads/index" class="<?php if(($mnum==6)): ?>a-active<?php endif; ?>">DOWNLOADS</a>
+			</li>
+		</ul>
+	</div>
+</div>
 
 	<div class="content fn-clear">
 		<div class="leftmenu">
-			<h1>Works</h1>
+			<h1>Category</h1>
 			<ul>
 				<li>
 					<a href="__APP__/Work/index" class="cus">Work<s></s> </a>
@@ -20,14 +67,14 @@
 
 		<div class="main">
 			<p>
-				Works > Works List > Add
+				Category > Category List > Add
 			</p>
 			<div class="blist">
 				<div class="tit">
-					Works List
+					Category List
 				</div>
 				<div class="itm">
-					<form action="__URL__/addw" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+					<form action="__URL__/add" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 						<table class="tb-02">
 							<thead>
 								<tr>
@@ -39,20 +86,18 @@
 									<td colspan="4" height="10"></td>
 								</tr>
 								
-								<tr>
+								<!-- <tr>
 									<td>Category:</td>
 									<td height="25">
-									<select style="width:100px;" name="cid">
-										<volist name="clist" id="vo">
-										<option value="{$vo.category_id}" >{$vo.category_name}</option>
-										</volist>
+									<select style="width:100px;">
+										<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option><?php echo ($vo["category_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 									</select></td>
-								</tr>
+								</tr> -->
 								
 								<tr>
 									<td width="60">Date:</td>
 									<td><span class="input01">
-										<input type="text" name="dateline" id="smidate" readOnly="true" >
+										<input type="text" name="update_date" id="smidate" readOnly="true" >
 										<span class="icn1"></span></span></td>
 
 								</tr>
@@ -62,14 +107,14 @@
 										<input type="text" name="orderby">
 									</span></td>
 								</tr>
-								<tr>
+								<!-- <tr>
 									<td>Image:</td>
 									<td><span class="input01">
 										<input type="file" name="src">
-									</span> (550px,400px)</td>
+									</span></td>
 									<td></td>
 									<td height="25"></td>
-								</tr>
+								</tr> -->
 								
 								<tr>
 									<td colspan="4" height="10"></td>
@@ -92,7 +137,7 @@
 										<tr>
 											<td colspan="2">
 											<div class="bd">
-												<textarea class="txtedit" name="description_cn" ></textarea>
+												<textarea name="edit"></textarea>
 											</div></td>
 										</tr>
 										<!--<tr>
@@ -114,7 +159,7 @@
 										<tr>
 											<td colspan="2">
 											<div class="bd">
-												<textarea class="txtedit" name="description_en"></textarea>
+												<textarea name="edit"></textarea>
 											</div></td>
 										</tr>
 										<!--<tr>
@@ -137,7 +182,14 @@
 
 		</div>
 	</div>
-	<include file='Public/Admin/foot.html' />
+	<div class="footer">
+	<div class="wrap">
+		<p>
+			&copy;2013 Powered by <a href=""></a>
+		</p>
+	</div>
+</div>
+
 
 	<script type="text/javascript">
 		$(function() {
@@ -146,7 +198,7 @@
 				enddate : 2032
 			});
 			$("select").sSelect();
-			$(".txtedit").cleditor().ready(function() {
+			$("textarea[name=edit]").cleditor().ready(function() {
 				$("div.tabs").tabs("div.panes > table", {
 					current : 'active',
 					effect : 'fade'

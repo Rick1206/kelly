@@ -9,46 +9,48 @@
 		<div class="leftmenu">
 			<h1>Work</h1>
 			<ul>
+
 				<li>
 					<a href="__APP__/Work/category" class="cus">Work Category<s></s></a>
 				</li>
 				<li>
 					<a href="__APP__/Work/index" class="cus">Work<s></s> </a>
 				</li>
+
 			</ul>
 		</div>
 		<div class="main">
 			<p>
-				Work> WorkList
+				Category >  Category List
 			</p>
 			<div class="blist">
 				<div class="tit">
-					WorkList <s><a href="__URL__/addworks">Add Work</a></s>
+					Category List<s><a href="__URL__/addcategory">Add Category</a></s>
 				</div>
-				<form action="__URL__/wrefresh" method="post" accept-charset="utf-8">
+				<form action="__URL__/crefresh" method="post" accept-charset="utf-8">
 					<div class="itm">
 						<table class="tb-01">
 							<thead>
 								<tr>
 									<th width="40">All</th>
-									<th width="115">Type</th>
-									<th width="100">Title</th>
+									<th width="215">Category Name</th>
 									<th width="100">Time</th>
 									<th width="85">Edit</th>
 								</tr>
 							</thead>
+
 							<tbody>
 								<volist name="list" id="vo">
 									<tr>
 										<td>
-										<input type="checkbox" name="cho[]" value='{$vo.wid}'/>
+										<input type="checkbox" name="cho[]" value='{$vo.bid}'/>
 										</td>
-										<td>{$vo.category_name}</td>
-										<td> {$vo.title_cn} | {$vo.title_en} </td>
+										<td> {$vo.category_name}</td>
 										<td>{$vo.dateline}</td>
-										<td><a href="__URL__/editworks/wid/{$vo.wid}"><s class="s1"></s></a></td>
+										<td><a href="__URL__/editworks/bid/{$vo.bid}"><s class="s1"></s></a></td>
 									</tr>
 								</volist>
+
 								<!-- <tr>
 								<td colspan=6>还没有任何记录</td>
 								</tr> -->

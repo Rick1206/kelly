@@ -3,36 +3,14 @@
 class CommentsAction extends Action {
 	public function index() {
 		if ($this -> checkLogin()) {
+			$this->getData();
 			$this -> display("index");
 		} else {
 			$this -> display("login");
 		}
 	}
 
-	public function islogin() {
-		if ($_POST['adname'] != '' && $_POST['adpassword'] != '') {
-			$user = D('admin');
-			$u = $user -> field('adname,ademail,lastlogin,lastip') 
-			-> where(array('adname' => $_POST['adname'], 'adpassword' => md5($_POST['adpassword']))) 
-			-> find();
-			
-			if ($u) {
-				$_SESSION = $u;
-				$_SESSION['isLogin'] = 1;
-				$arr = array();
-				$arr['lastlogin'] = time();
-				$arr['lastip'] = get_client_ip();
-				$user -> where(array('adname' => 'admin')) -> save($arr);
-				$this -> success('欢迎登陆',"index");
-			} else {
-				$this -> error('用户名或者密码错误');
-			}
-
-		} else {
-			$this -> error('请输入用户名和密码');
-		}
-	}
-
+	
 	public function checkLogin() {
 		if (!isset($_SESSION["islogin"]) && !isset($_SESSION["adname"])) {
 			return false;
@@ -41,8 +19,38 @@ class CommentsAction extends Action {
 		}
 	}
 	
-	public function logout(){
-		
+	public function getData() {
+		$Data = D('comments');
+		import('ORG.Util.Page');
+		$map = "";
+		$count = $Data -> where($map) -> count();
+		$Page = new Page($count);
+		$show = $Page -> show();
+		$list = $Data -> where($map) -> order('orderby,dateline desc') -> limit($Page -> firstRow . ',' . $Page -> listRows) -> select();
+		$this -> assign('list', $list);
+		$this -> assign('page', $show);
 	}
+	
+	public function refresh() {
+		$news = D('comments');
+		$res = FALSE;
+		if (isset($_POST['cho'])) {
+			$nid = $_POST['cho'];
+		}
+		foreach ($nid as $key => $value) {
+			if ($news -> delete($value)) {
+				$res = TRUE;
+			} else {
+				$res = FALSE;
+			}
+		}
+		if ($res) {
+			    $this->success('删除成功', 'index');
+		} else {
+			$this -> error('删除失败');
+		}
+
+	}
+	
 
 }

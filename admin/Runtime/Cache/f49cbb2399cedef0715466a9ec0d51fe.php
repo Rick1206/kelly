@@ -56,44 +56,46 @@
 		<div class="leftmenu">
 			<h1>Work</h1>
 			<ul>
+
 				<li>
 					<a href="__APP__/Work/category" class="cus">Work Category<s></s></a>
 				</li>
 				<li>
 					<a href="__APP__/Work/index" class="cus">Work<s></s> </a>
 				</li>
+
 			</ul>
 		</div>
 		<div class="main">
 			<p>
-				Work> WorkList
+				Category >  Category List
 			</p>
 			<div class="blist">
 				<div class="tit">
-					WorkList <s><a href="__URL__/addworks">Add Work</a></s>
+					Category List<s><a href="__URL__/addcategory">Add Category</a></s>
 				</div>
-				<form action="__URL__/wrefresh" method="post" accept-charset="utf-8">
+				<form action="__URL__/crefresh" method="post" accept-charset="utf-8">
 					<div class="itm">
 						<table class="tb-01">
 							<thead>
 								<tr>
 									<th width="40">All</th>
-									<th width="115">Type</th>
-									<th width="100">Title</th>
+									<th width="215">Category Name</th>
 									<th width="100">Time</th>
 									<th width="85">Edit</th>
 								</tr>
 							</thead>
+
 							<tbody>
 								<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 										<td>
-										<input type="checkbox" name="cho[]" value='<?php echo ($vo["wid"]); ?>'/>
+										<input type="checkbox" name="cho[]" value='<?php echo ($vo["bid"]); ?>'/>
 										</td>
-										<td><?php echo ($vo["category_name"]); ?></td>
-										<td> <?php echo ($vo["title_cn"]); ?> | <?php echo ($vo["title_en"]); ?> </td>
+										<td> <?php echo ($vo["category_name"]); ?></td>
 										<td><?php echo ($vo["dateline"]); ?></td>
-										<td><a href="__URL__/editworks/wid/<?php echo ($vo["wid"]); ?>"><s class="s1"></s></a></td>
+										<td><a href="__URL__/editworks/bid/<?php echo ($vo["bid"]); ?>"><s class="s1"></s></a></td>
 									</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+
 								<!-- <tr>
 								<td colspan=6>还没有任何记录</td>
 								</tr> -->

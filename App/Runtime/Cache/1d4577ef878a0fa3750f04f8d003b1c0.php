@@ -50,7 +50,6 @@
 			<div class="row-fluid guestbook">
 				<div class="span7">
 					<div class="pd">
-
 						<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="one">
 								<div class="control">
 									<div class="label">
@@ -66,13 +65,10 @@
 									</div>
 									<div class="mes">
 										<?php echo ($vo["umessage"]); ?>
-										<!-- Hi. Kelly! How are you? I’m Dr. Kim from Korea. I was so glad to meet you. I wish to see you again! ^^    (2012-9-15) -->
 									</div>
 								</div>
 							</div><?php endforeach; endif; else: echo "" ;endif; ?>
-
 						<div class="page">
-
 							<?php echo ($cpage); ?>
 							<!-- <a href="#" class="btn">prev</a>
 							<span class="btn">5/10</span>
@@ -144,10 +140,8 @@
 	<script type="text/javascript">
 		seajs.use("jquery", function() {
 			$(function() {
-				//alert(3);
 				$("#btnSend").click(function() {
 					$("#formComment").submit();
-
 				});
 			});
 		});

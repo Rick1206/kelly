@@ -1,0 +1,166 @@
+<include file="Public/Admin/head.html" />
+
+<body id="index" onload="">
+	
+	<assign name="mnum" value="2" />
+	<include file='Public/Admin/nav.html'/>
+	
+	<div class="content fn-clear">
+		<div class="leftmenu">
+			<h1>Banners</h1>
+			<ul>
+				<li>
+					<a href="__APP__/Banners/index" class="cus">Banners<s></s></a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="main">
+			<p>
+				Banners > Banners List
+			</p>
+			<div class="blist">
+				<div class="tit">
+					<!-- Banners List<s>Add Banners</s> -->
+					Banners List
+				</div>
+				<div class="itm">
+					<form action="<{$url}>/edit" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+					<table class="tb-02">
+						<thead>
+							<tr>
+								<th colspan="4">基本信息</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="4" height="10"></td>
+							</tr>
+							<tr>
+								<td width="60">上架日期:</td>
+								<td><span class="input01">
+									<input type="text" name="" id="smidate" readOnly="true" >
+									<span class="icn1"></span></span></td>
+								<td width="60">礼品名称:</td>
+								<td><span class="input01">
+									<input type="text" name="gname" value="<{$data[0].gname}>">
+								</span></td>
+							</tr>
+							<tr>
+								<td>分类:</td>
+								<td height="25">
+								<select style="width:210px;">
+									<option>Category1</option><option>Category2</option><option>Category3</option>
+								</select></td>
+								<td>图片:</td>
+								<td><span class="input01">
+									<input type="file" name="gthumb" value="<{$data[0].gthumb}>">
+									<span class="icn2"></span></span></td>
+							</tr>
+							<tr>
+								<td colspan="2">是否热门? <label>
+									<input type="radio" name="a"/>
+									No</label><label>
+									<input type="radio"  name="a"/>
+									Yes</label></td>
+								<td>Thumbnail:</td>
+								<td><span class="input01">
+									<input type="text" name="">
+									<span class="icn2"></span></span></td>
+							</tr>
+							<tr>
+								<td>礼品积分:</td>
+								<td><span class="input01">
+									<input type="text" name="points" value="<{$data[0].points}>">
+								</span></td>
+								<td>Description:</td>
+								<td><span class="input01">
+									<input type="text" name="">
+								</span></td>
+							</tr>
+							<tr>
+								<td colspan="4" height="10"></td>
+							</tr>
+						</tbody>
+					</table>
+					<div style="padding:20px 0;">
+						<div class="tabs">
+							<a href="javascript:void(0);">English</a><a href="javascript:void(0);">Chinese</a>
+						</div>
+						<div class="panes" style="height:353px;">
+							<table class="tb-02" style="border-top: none;">
+								<tbody>
+									<tr>
+										<td height="40" width="100" style="text-align:center">Title:</td>
+										<td><span class="input01" style="width:480px;">
+											<input type="text" name=""  style="width:480px;">
+										</span></td>
+									</tr>
+									<tr>
+										<td colspan="2">
+										<div class="bd">
+											<textarea name="edit"></textarea></div>
+										</td>
+									</tr>
+									<tr>
+										<td height="40" width="100" style="text-align:center">Download:</td>
+										<td>
+										<input type="file" id="dload" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<table class="tb-02" style="border-top: none;">
+								<tbody>
+									<tr>
+										<td height="40" width="100" style="text-align:center">Title:</td>
+										<td><span class="input01" style="width:480px;">
+											<input type="text" name=""  style="width:480px;">
+										</span></td>
+									</tr>
+									<tr>
+										<td colspan="2">
+										<div class="bd">
+											<textarea name="edit"></textarea></div>
+										</td>
+									</tr>
+									<tr>
+										<td height="40" width="100" style="text-align:center">Download:</td>
+										<td>
+										<input type="file" id="dload" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p style="padding-top: 10px">
+						<input type="submit" name="" value="保存" class="but1">
+						<input type="hidden" name="gid" value="<{$gid}>"/>	
+						<!-- <input type="submit" class="but2" name="" value="Delete"> -->
+					</p>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<{include file='public/foot.html' }>
+
+	<script type="text/javascript">
+		$(function() {
+			$('#smidate').simpleDatepicker({
+				startdate : 2008,
+				enddate : 2032
+			});
+			$("select").sSelect();
+			$("textarea[name=edit]").cleditor().ready(function() {
+				$("div.tabs").tabs("div.panes > table", {
+					current : 'active',
+					effect : 'fade'
+				});
+			});
+			$("input:file").fileEveryWhere({});
+		});
+	</script>
+</body>

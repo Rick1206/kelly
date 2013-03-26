@@ -43,10 +43,6 @@
 <div class="content">
     <div class="banner" id="newBanner">
     	<?php if(is_array($blist)): $i = 0; $__LIST__ = $blist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><img src="Public/Uploads/Banners/<?php echo ($vo["photo"]); ?>" alt="<?php echo ($vo["title_cn"]); ?>"><?php endforeach; endif; else: echo "" ;endif; ?>
-        <!-- <img src="__PUBLIC__/images/banner/01.jpg" alt="">
-        <img src="__PUBLIC__/images/banner/02.jpg" alt="">
-        <img src="__PUBLIC__/images/banner/03.jpg" alt="">
-        <img src="__PUBLIC__/images/banner/04.jpg" alt=""> -->
     </div>
     <a href="javascript:;" id="prev" class="png"></a>
     <a href="javascript:;" id="next" class="png"></a>
@@ -82,24 +78,13 @@
                 <div class="p">
                 	<?php if(is_array($nlist)): $i = 0; $__LIST__ = $nlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><p><?php echo ($vo["dateline"]); ?><br>
                         <a href="__APP__/Index/news/nid/<?php echo ($vo["nid"]); ?>"><?php echo ($vo["title_cn"]); ?></a></p><?php endforeach; endif; else: echo "" ;endif; ?>
-                    <!-- <p>2012-06-17 <br>
-                        <a href="#">毛一青 阚诗淇 原弓 一个梦能把你降落到哪里？</a></p>
-                    <p>2012-06-17 <br>
-                        <a href="#">毛一青 阚诗淇 原弓 一个梦能把你降落到哪里？</a></p> -->
                 </div>
                 <div class="title t2"><a href="__APP__/Index/guestbook" title="Comment"></a></div>
                 <div class="p">
                 	<?php if(is_array($clist)): $i = 0; $__LIST__ = $clist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><p>
-                        <?php echo ($vo["dateline"]); ?> <br><?php echo ($vo["title_cn"]); ?>
+                        <?php echo (msubstr($vo["dateline"],0,10,'utf-8',false)); ?> <br><?php echo (msubstr($vo["umessage"],0,100,'utf-8',false)); ?>
                     </p>　<?php endforeach; endif; else: echo "" ;endif; ?>
-                    <!-- <p>
-                        2012-06-17  <br>
-                        诗淇画册之序
-                    </p>　
-                    <p>
-                        2012-06-17  <br>
-                        诗淇画册之序
-                    </p> -->　　
+                
                 </div>
             </div>
         </div>

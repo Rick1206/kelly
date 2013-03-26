@@ -1,0 +1,7 @@
+[ 2013-03-26T15:06:37+08:00 ] ERR: (ThinkException) Model:Relation您所请求的方法不存在！
+[ 2013-03-26T15:06:37+08:00 ] ERR: (ThinkException) Model:Relation您所请求的方法不存在！
+[ 2013-03-26T15:06:37+08:00 ] ERR: (ThinkException) Model:Relation您所请求的方法不存在！
+[ 2013-03-26T15:06:38+08:00 ] ERR: (ThinkException) Model:Relation您所请求的方法不存在！
+[ 2013-03-26T15:19:14+08:00 ] ERR: (ThinkException) 非法操作:addWork
+[ 2013-03-26T15:21:30+08:00 ] ERR: (ThinkException) 非法操作:addWork
+[ 2013-03-26T15:21:34+08:00 ] ERR: (ThinkException) 模板不存在[./Admin/Tpl/Work/addcategory.html]

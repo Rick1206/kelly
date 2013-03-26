@@ -3,10 +3,6 @@
     	<volist name="blist" id="vo">
 		<img src="Public/Uploads/Banners/{$vo.photo}" alt="{$vo.title_cn}">	
 		</volist>
-        <!-- <img src="__PUBLIC__/images/banner/01.jpg" alt="">
-        <img src="__PUBLIC__/images/banner/02.jpg" alt="">
-        <img src="__PUBLIC__/images/banner/03.jpg" alt="">
-        <img src="__PUBLIC__/images/banner/04.jpg" alt=""> -->
     </div>
     <a href="javascript:;" id="prev" class="png"></a>
     <a href="javascript:;" id="next" class="png"></a>
@@ -44,26 +40,15 @@
                     <p>{$vo.dateline}<br>
                         <a href="__APP__/Index/news/nid/{$vo.nid}">{$vo.title_cn}</a></p>
                     </volist>
-                    <!-- <p>2012-06-17 <br>
-                        <a href="#">毛一青 阚诗淇 原弓 一个梦能把你降落到哪里？</a></p>
-                    <p>2012-06-17 <br>
-                        <a href="#">毛一青 阚诗淇 原弓 一个梦能把你降落到哪里？</a></p> -->
                 </div>
                 <div class="title t2"><a href="__APP__/Index/guestbook" title="Comment"></a></div>
                 <div class="p">
                 	<volist name="clist" id="vo">
                     <p>
-                        {$vo.dateline} <br>{$vo.title_cn}
+                        {$vo.dateline|msubstr=0,10,'utf-8',false} <br>{$vo.umessage|msubstr=0,100,'utf-8',false}
                     </p>　
                      </volist>
-                    <!-- <p>
-                        2012-06-17  <br>
-                        诗淇画册之序
-                    </p>　
-                    <p>
-                        2012-06-17  <br>
-                        诗淇画册之序
-                    </p> -->　　
+                
                 </div>
             </div>
         </div>

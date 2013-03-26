@@ -3,10 +3,13 @@
 class IndexAction extends Action {
 	public function index() {
 		$this -> nav = 1;
+		Load('extend');
 		$this -> getBannerData();
-		$this -> getNews();
-		$this -> getComments();
+		$this -> getNews("3");
+		$this -> getComments("3");
+		$this -> title = 'Kelly - Homepage';
 		$this -> display('index');
+		
 	}
 
 	public function about() {
@@ -94,7 +97,7 @@ class IndexAction extends Action {
 		$count = $Data -> where($map) -> count();
 		$Page = new Page($count, $pnum);
 		$show = $Page -> show();
-		$list = $Data -> where($map) -> order('orderby') -> limit($Page -> firstRow . ',' . $Page -> listRows) -> select();
+		$list = $Data -> where($map) -> order('orderby,dateline desc') -> limit($Page -> firstRow . ',' . $Page -> listRows) -> select();
 		$this -> assign('nlist', $list);
 		$this -> assign('npage', $show);
 	}
@@ -106,7 +109,7 @@ class IndexAction extends Action {
 		$count = $Data -> where($map) -> count();
 		$Page = new Page($count, $pnum);
 		$show = $Page -> show();
-		$list = $Data -> where($map) -> order('orderby') -> limit($Page -> firstRow . ',' . $Page -> listRows) -> select();
+		$list = $Data -> where($map) -> order('orderby,dateline desc') -> limit($Page -> firstRow . ',' . $Page -> listRows) -> select();
 		$this -> assign('clist', $list);
 		$this -> assign('cpage', $show);
 	}
