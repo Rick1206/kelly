@@ -19,6 +19,7 @@ class CommentsAction extends Action {
 		}
 	}
 	
+<<<<<<< HEAD
 	public function editcomments(){
 		
 		$Form = D('comments');
@@ -33,6 +34,8 @@ class CommentsAction extends Action {
 		
 	}
 	
+=======
+>>>>>>> 898570b10a4be6ddd3f8912b386dc2afa2c2b491
 	public function getData() {
 		$Data = D('comments');
 		import('ORG.Util.Page');

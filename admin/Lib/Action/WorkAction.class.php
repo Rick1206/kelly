@@ -30,6 +30,12 @@ class WorkAction extends Action {
 		$show = $Page -> show();
 		$list = $Data -> Relation(true) -> where($map) -> order('dateline') -> limit($Page -> firstRow . ',' . $Page -> listRows) -> select();
 		$this -> assign('list', $list);
+<<<<<<< HEAD
+=======
+		
+		//dump($list);
+		
+>>>>>>> 898570b10a4be6ddd3f8912b386dc2afa2c2b491
 		$this -> assign('page', $show);
 	}
 
@@ -68,13 +74,20 @@ class WorkAction extends Action {
 		$work -> dateline = $_POST['dateline'];
 		$work -> orderby = $_POST['orderby'];
 		$work -> photo = $info[0]['savename'];
+<<<<<<< HEAD
 		$work -> add();
 		
+=======
+		
+		$work -> add();
+		// 写入用户数据到数据库
+>>>>>>> 898570b10a4be6ddd3f8912b386dc2afa2c2b491
 		$this -> success('数据保存成功！');
 		
 	}
 	
 	
+<<<<<<< HEAD
 	public function editworks() {
 	
 		$Form = D('work');
@@ -140,6 +153,11 @@ class WorkAction extends Action {
 	}
 	
 	
+=======
+	public function editbanners() {
+		$this -> display();
+	}
+>>>>>>> 898570b10a4be6ddd3f8912b386dc2afa2c2b491
 
 	public function wrefresh() {
 		$banners = D('work');
@@ -213,6 +231,7 @@ class WorkAction extends Action {
 	
 	public function addc(){
 		
+<<<<<<< HEAD
 		$work = D("work_category");
 		
 		$work -> create();
@@ -229,5 +248,30 @@ class WorkAction extends Action {
 		}
 	}
 
+=======
+		$work = D("work_catgory");
+		
+		$work -> create();
+		
+		//$work -> cid = $_POST["cid"];
+		$work -> title_cn = $_POST['title_cn'];
+		$work -> title_en = $_POST['title_en'];
+		$work -> description_en =  $_POST['description_en'];
+		$work -> description_cn =  $_POST['description_cn'];
+		$work -> dateline = $_POST['dateline'];
+		$work -> orderby = $_POST['orderby'];
+		$work -> photo = $info[0]['savename'];
+		
+		$work -> add();
+		// 写入用户数据到数据库
+		$this -> success('数据保存成功！');
+		
+		
+	}
+	
+	
+	
+	
+>>>>>>> 898570b10a4be6ddd3f8912b386dc2afa2c2b491
 
 }
