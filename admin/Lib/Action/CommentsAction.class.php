@@ -19,7 +19,6 @@ class CommentsAction extends Action {
 		}
 	}
 	
-<<<<<<< HEAD
 	public function editcomments(){
 		
 		$Form = D('comments');
@@ -34,8 +33,6 @@ class CommentsAction extends Action {
 		
 	}
 	
-=======
->>>>>>> 898570b10a4be6ddd3f8912b386dc2afa2c2b491
 	public function getData() {
 		$Data = D('comments');
 		import('ORG.Util.Page');
@@ -67,6 +64,29 @@ class CommentsAction extends Action {
 			$this -> error('删除失败');
 		}
 
+	}
+	public function edit(){
+		$Form = D('comments');
+		$map["cid"] = $_POST['cid'];
+
+		$data["usex"] = $_POST['usex'];
+		$data["uname"] = $_POST['uname'];
+		$data["uemail"] = $_POST['uemail'];
+		$data["uhomepage"] = $_POST['uhomepage'];
+		$data["umessage"] = $_POST['umessage'];
+		
+		$data["dateline"] = $_POST['dateline'];
+		
+		$result = $Form -> where($map) -> save($data);
+
+		if ($result) {
+			$this -> success('操作成功');
+		} else {
+			$this -> error('写入错误');
+		}
+		
+		
+		
 	}
 	
 

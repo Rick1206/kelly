@@ -40,93 +40,95 @@
         </div>
     </div>
 
-
 <div class="content">
-    <div class="banner" id="newBanner">
-        <img src="<?php echo ($bgUrl); ?>" alt="">
-    </div>
-    <div class="vd">
-        <div class="container pt2">
-            <h1 class="page-title"><?php echo ($title); ?></h1>
-            <div class="img-box">
-                <div class="menu">
-                    <?php if($nav == "3" OR $nav == "2" ): ?><a href="#" class="selected">Life</a>
-                        <a href="#">Work</a><?php endif; ?>
-                </div>
-                <div class="imgs">
-                    <div class="imgs-inner">
-                        <ul>
-                        	
-                        	
-                        	
-                        	
-                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
-                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
-                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
-                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
-                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
-                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
-                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
-                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
-                        </ul>
-                    </div>
-                    <a href="javascript:;" class="prev"></a>
-                    <a href="javascript:;" class="next"></a>
-                </div>
-                <?php if($art): ?><div class="article">
-                    <p>
-                        <?php echo ($art); ?>
-                    </p>
-                </div><?php endif; ?>
-            </div>
-        </div>
-    </div>
+	<div class="banner" id="newBanner">
+		<img src="<?php echo ($bgUrl); ?>" alt="">
+	</div>
+	<div class="vd">
+		<div class="container pt2">
+			<h1 class="page-title"><?php echo ($title); ?></h1>
+			<div class="img-box">
+				<div class="menu">
+					<?php if($nav == "3" OR $nav == "2" ): if(is_array($wlist)): $i = 0; $__LIST__ = $wlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a href="#" <?php if($key == 0): ?>class="selected"<?php endif; ?>><?php echo ($vo["category_name"]); ?></a><?php endforeach; endif; else: echo "" ;endif; endif; ?>
+				</div>
+				<div class="imgs">
+					<div class="imgs-inner">
+						<ul>
+							<?php if(is_array($wlist)): $i = 0; $__LIST__ = $wlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(is_array($vo['work'])): $i = 0; $__LIST__ = $vo['work'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$sub): $mod = ($i % 2 );++$i;?><li>
+										<a class="item" href="__PUBLIC__/Uploads/Works/<?php echo ($sub["photo"]); ?>"><img src="__PUBLIC__/Uploads/Works/s_<?php echo ($sub["photo"]); ?>" alt="<?php echo ($sub["title_cn"]); ?>" data-description="<?php echo ($sub["description_cn"]); ?>">
+										<div class="alt">
+											<?php echo ($sub["title_cn"]); ?>
+										</div></a>
+									</li><?php endforeach; endif; else: echo "" ;endif; endforeach; endif; else: echo "" ;endif; ?>
+						</ul>
+					</div>
+					<a href="javascript:;" class="prev"></a>
+					<a href="javascript:;" class="next"></a>
+				</div>
+				<?php if($art): ?><div class="article">
+						<p>
+							<?php echo ($art); ?>
+						</p>
+					</div><?php endif; ?>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div id="alert-img">
-    <a href="javascript:;" class="close popClose"></a>
-    <div class="big-pic">
-        <img src="__PUBLIC__/images/test/01.jpg" alt="" width="550" height="400">
-       <div style="padding-top:10px;">
-           <div class="title">Kelly Ken</div>
-           <?php if($nav == '4' ): ?><a href="#" class="btn-download">Download</a><?php endif; ?>
-       </div>
-    </div>
+	<a href="javascript:;" class="close popClose"></a>
+	<div class="big-pic">
+		<img src="__PUBLIC__/images/test/01.jpg" alt="" width="550" height="400">
+		<div style="padding-top:10px;">
+			<div class="title">
+				Kelly Ken
+			</div>
+			<?php if($nav == '4' ): ?><a href="#" class="btn-download">Download</a><?php endif; ?>
+		</div>
+	</div>
 </div>
 
 
-    <script type="text/javascript">
-        seajs.use(['jscrollpane','jscrollpaneCss','mousewheel','lightbox'],function(){
-            var imgs = $('.imgs-inner');
-            imgs.animate({opacity:1},600);
-            var imgsLi = imgs.find('li');
-            imgs.find('ul').width(imgsLi.length * imgsLi.innerWidth() );
-            imgs.jScrollPane({ showArrows: true, animateScroll: true });
-            var api = imgs.data('jsp');
-            $('.imgs .prev').bind('click',function(){
-                api.scrollBy(-( imgsLi.innerWidth() ),0);
-            });
-            $('.imgs .next').bind('click',function(){
-                api.scrollBy( imgsLi.innerWidth() ,0);
-            });
-            $('.jspScrollable').removeAttr('tabindex');
-            imgsLi.hover(function(){
-                $(this).find('.item').animate({top:-20},200,function(){
-                    $(this).find('.alt').fadeIn();
-                });
-            },function(){
-                $(this).find('.item').animate({top:0},200,function(){
-                    $(this).find('.alt').hide();
-                });
-            });
-            imgsLi.each(function(){
-                $(this).click(function(){
-                    $.lightBox('#alert-img');
-                })
-            })
-        })
-    </script>
-
+	<script type="text/javascript">
+		seajs.use(['jscrollpane', 'jscrollpaneCss', 'mousewheel', 'lightbox'], function() {
+			var imgs = $('.imgs-inner');
+			imgs.animate({
+				opacity : 1
+			}, 600);
+			var imgsLi = imgs.find('li');
+			imgs.find('ul').width(imgsLi.length * imgsLi.innerWidth());
+			imgs.jScrollPane({
+				showArrows : true,
+				animateScroll : true
+			});
+			var api = imgs.data('jsp');
+			$('.imgs .prev').bind('click', function() {
+				api.scrollBy(-( imgsLi.innerWidth() ), 0);
+			});
+			$('.imgs .next').bind('click', function() {
+				api.scrollBy(imgsLi.innerWidth(), 0);
+			});
+			$('.jspScrollable').removeAttr('tabindex');
+			imgsLi.hover(function() {
+				$(this).find('.item').animate({
+					top : -20
+				}, 200, function() {
+					$(this).find('.alt').fadeIn();
+				});
+			}, function() {
+				$(this).find('.item').animate({
+					top : 0
+				}, 200, function() {
+					$(this).find('.alt').hide();
+				});
+			});
+			imgsLi.each(function() {
+				$(this).click(function() {
+					$.lightBox('#alert-img');
+				})
+			})
+		})
+	</script>
 
 
 

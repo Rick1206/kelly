@@ -43,11 +43,11 @@
 								<volist name="list" id="vo">
 									<tr>
 										<td>
-										<input type="checkbox" name="cho[]" value='{$vo.bid}'/>
+										<input type="checkbox" name="cho[]" value='{$vo.category_id}'/>
 										</td>
 										<td> {$vo.category_name}</td>
 										<td>{$vo.dateline}</td>
-										<td><a href="__URL__/editworks/bid/{$vo.bid}"><s class="s1"></s></a></td>
+										<td><a href="__URL__/editcategorys/cid/{$vo.category_id}"><s class="s1"></s></a></td>
 									</tr>
 								</volist>
 

@@ -5,7 +5,6 @@
 [ 2013-03-26T15:19:14+08:00 ] ERR: (ThinkException) 非法操作:addWork
 [ 2013-03-26T15:21:30+08:00 ] ERR: (ThinkException) 非法操作:addWork
 [ 2013-03-26T15:21:34+08:00 ] ERR: (ThinkException) 模板不存在[./Admin/Tpl/Work/addcategory.html]
-<<<<<<< HEAD
 [ 2013-03-26T15:35:37+08:00 ] ERR: (ThinkException) 非法操作:add
 [ 2013-03-26T15:35:52+08:00 ] ERR: (ThinkException) 非法操作:add
 [ 2013-03-26T15:41:20+08:00 ] ERR: (ThinkException) 非法操作:editCommentss
@@ -29,5 +28,3 @@
 [ 2013-03-26T16:32:47+08:00 ] ERR: (ThinkException) 无法加载模块:Banners
 [ 2013-03-26T16:40:54+08:00 ] ERR: (ThinkException) 无法加载模块:Banners
 [ 2013-03-26T16:41:14+08:00 ] ERR: (ThinkException) 无法加载模块:Banners
-=======
->>>>>>> 898570b10a4be6ddd3f8912b386dc2afa2c2b491

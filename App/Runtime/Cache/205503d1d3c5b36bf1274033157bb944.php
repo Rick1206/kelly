@@ -55,16 +55,7 @@
                 <div class="imgs">
                     <div class="imgs-inner">
                         <ul>
-							<?php if(is_array($dlist)): $i = 0; $__LIST__ = $dlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
-                           
-                            <!-- <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
-                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
-                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
-                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
-                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
-                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li>
-                            <li><a class="item" href="javascript:;"><img src="__PUBLIC__/images/test/01.jpg" alt="Kelly Ken"><div class="alt">Kelly Ken</div></a></li> -->
-                       			
+							<?php if(is_array($dlist)): $i = 0; $__LIST__ = $dlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><a class="item" href="javascript:;"><img src="__PUBLIC__/Uploads/Downloads/s_<?php echo ($vo["photo"]); ?>" alt="<?php echo ($vo["title_cn"]); ?>"><div class="alt"><?php echo ($vo["title_cn"]); ?></div></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
                         </ul>
                     </div>
                     <a href="javascript:;" class="prev"></a>

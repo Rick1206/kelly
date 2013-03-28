@@ -89,11 +89,11 @@
 							<tbody>
 								<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 										<td>
-										<input type="checkbox" name="cho[]" value='<?php echo ($vo["bid"]); ?>'/>
+										<input type="checkbox" name="cho[]" value='<?php echo ($vo["category_id"]); ?>'/>
 										</td>
 										<td> <?php echo ($vo["category_name"]); ?></td>
 										<td><?php echo ($vo["dateline"]); ?></td>
-										<td><a href="__URL__/editworks/bid/<?php echo ($vo["bid"]); ?>"><s class="s1"></s></a></td>
+										<td><a href="__URL__/editcategorys/cid/<?php echo ($vo["category_id"]); ?>"><s class="s1"></s></a></td>
 									</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 
 								<!-- <tr>

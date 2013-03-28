@@ -15,11 +15,9 @@
 								<img src="/Public/Uploads/News/s_{$vo.photo}" alt="">
 							</div>
 							<div class="span7 ml">
-								<h1>{$vo.title_cn}</h1>
+								<a href="__URL__/news/nid/{$vo.nid}"><h1>{$vo.title_cn}</h1></a>
 								<p>
-									<a href="__URL__/news/nid/{$vo.nid}">
-										{$vo.description_cn|msubstr=0,100,'utf-8',false} 
-										</a>
+										{$vo.description_cn|msubstr=0,100,'utf-8',false} 	
 								</p>
 								<p>
 									{$vo.dateline}

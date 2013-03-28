@@ -20,30 +20,13 @@ class BannerAction extends Action {
 
 	public function getData() {
 		$Data = D('banners');
-<<<<<<< HEAD
 		import('ORG.Util.Page');
 		$map = "";
 		$count = $Data -> where($map) -> count();
 		$Page = new Page($count);
 		$show = $Page -> show();
-		$list = $Data -> where($map) -> order('UPDATE_DATE') -> limit($Page -> firstRow . ',' . $Page -> listRows) -> select();
+		$list = $Data -> where($map) -> order('orderby,update_date desc') -> limit($Page -> firstRow . ',' . $Page -> listRows) -> select();
 		$this -> assign('list', $list);
-=======
-		// 实例化Data数据对象"
-		import('ORG.Util.Page');
-		// 导入分页类
-		$map = "";
-		$count = $Data -> where($map) -> count();
-		// 查询满足要求的总记录数 $map表示查询条件
-		$Page = new Page($count);
-		// 实例化分页类 传入总记录数
-		$show = $Page -> show();
-		// 分页显示输出
-		$list = $Data -> where($map) -> order('UPDATE_DATE') -> limit($Page -> firstRow . ',' . $Page -> listRows) -> select();
-		// 进行分页数据查询
-		$this -> assign('list', $list);
-		// 赋值数据集
->>>>>>> 898570b10a4be6ddd3f8912b386dc2afa2c2b491
 		$this -> assign('page', $show);
 	}
 
@@ -77,7 +60,6 @@ class BannerAction extends Action {
 	public function edit() {
 		$Form = D('banners');
 		$map["bid"] = $_POST['bid'];
-<<<<<<< HEAD
 		
 		import('ORG.Net.UploadFile');
 		$upload = new UploadFile();
@@ -97,8 +79,6 @@ class BannerAction extends Action {
 				@unlink('Public/Uploads/Banners/'.$imgurl["photo"]);
 			}
 		
-=======
->>>>>>> 898570b10a4be6ddd3f8912b386dc2afa2c2b491
 		$data["title_cn"] = $_POST['title_cn'];
 		$data["title_en"] = $_POST['title_en'];
 		$data["update_date"] = $_POST['update_date'];

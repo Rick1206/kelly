@@ -4,7 +4,7 @@ class WorkAction extends Action {
 	public function index() {
 		if ($this -> checkLogin()) {
 			$this -> getData();
-			
+
 			$this -> display("index");
 		} else {
 			$this -> display("index/login");
@@ -20,92 +20,70 @@ class WorkAction extends Action {
 	}
 
 	public function getData() {
-		
+
 		$Data = D('Work');
 		import('ORG.Util.Page');
-		
+
 		$map = "";
-		$count = $Data->Relation(true) -> where($map) -> count();
+		$count = $Data -> Relation(true) -> where($map) -> count();
 		$Page = new Page($count);
 		$show = $Page -> show();
 		$list = $Data -> Relation(true) -> where($map) -> order('dateline') -> limit($Page -> firstRow . ',' . $Page -> listRows) -> select();
 		$this -> assign('list', $list);
-<<<<<<< HEAD
-=======
-		
-		//dump($list);
-		
->>>>>>> 898570b10a4be6ddd3f8912b386dc2afa2c2b491
 		$this -> assign('page', $show);
 	}
 
 	public function addworks() {
-		$this->getcategory();
+		$this -> getcategory();
 		$this -> display();
 	}
-	
+
 	public function addw() {
 		import('ORG.Net.UploadFile');
 		$upload = new UploadFile();
 		//$upload -> maxSize = 3145728;
 		$upload -> allowExts = array('jpg', 'gif', 'png', 'jpeg');
-		
+
 		$upload -> savePath = 'Public/Uploads/Works/';
-		$upload->thumb = true;
-		$upload->imageClassPath = 'ORG.Util.Image';
-		$upload->thumbMaxWidth = '50,162';
-		$upload->thumbMaxHeight = '50,108';
-		$upload->thumbPrefix = 's_';
-		
+		$upload -> thumb = true;
+		$upload -> imageClassPath = 'ORG.Util.Image';
+		$upload -> thumbMaxWidth = '50,162';
+		$upload -> thumbMaxHeight = '50,108';
+		$upload -> thumbPrefix = 's_';
+
 		if (!$upload -> upload()) {
 			$this -> error($upload -> getErrorMsg());
 		} else {
 			$info = $upload -> getUploadFileInfo();
 		}
-		
+
 		$work = D("work");
-		
+
 		$work -> create();
 		$work -> cid = $_POST["cid"];
 		$work -> title_cn = $_POST['title_cn'];
 		$work -> title_en = $_POST['title_en'];
-		$work -> description_en =  $_POST['description_en'];
-		$work -> description_cn =  $_POST['description_cn'];
+		$work -> description_en = $_POST['description_en'];
+		$work -> description_cn = $_POST['description_cn'];
 		$work -> dateline = $_POST['dateline'];
 		$work -> orderby = $_POST['orderby'];
 		$work -> photo = $info[0]['savename'];
-<<<<<<< HEAD
 		$work -> add();
-		
-=======
-		
-		$work -> add();
-		// 写入用户数据到数据库
->>>>>>> 898570b10a4be6ddd3f8912b386dc2afa2c2b491
+
 		$this -> success('数据保存成功！');
-		
-	}
-	
-	
-<<<<<<< HEAD
-	public function editworks() {
-	
-		$Form = D('work');
-		
-	
-		
-		$map["wid"] = $this->_param("wid");
-		
-		$result = $Form -> where($map) -> select();
-		
-		$this -> assign('data', $result);
-		
-			$this->getcategory();
-		$this -> display();
 
 	}
-	
-	public function editw(){
+
+	public function editworks() {
+		$Form = D('work');
+		$map["wid"] = $this -> _param("wid");
+		$result = $Form -> where($map) -> select();
+		$this -> assign('data', $result);
+		$this -> getcategory();
+		$this -> display();
+	}
+
+	public function editw() {
 		$Form = D('work');
 		$map["wid"] = $_POST['wid'];
 
@@ -131,7 +109,7 @@ class WorkAction extends Action {
 			@unlink('Public/Uploads/Works/s_' . $imgurl["photo"]);
 			@unlink('Public/Uploads/Works/' . $imgurl["photo"]);
 		}
-		
+
 		$data["cid"] = $_POST['cid'];
 		$data["title_cn"] = $_POST['title_cn'];
 		$data["title_en"] = $_POST['title_en'];
@@ -140,8 +118,7 @@ class WorkAction extends Action {
 		$data["description_en"] = $_POST['description_en'];
 		$data["dateline"] = $_POST['dateline'];
 		$data["orderby"] = $_POST['orderby'];
-		
-		
+
 		$result = $Form -> where($map) -> save($data);
 
 		if ($result) {
@@ -151,13 +128,6 @@ class WorkAction extends Action {
 		}
 
 	}
-	
-	
-=======
-	public function editbanners() {
-		$this -> display();
-	}
->>>>>>> 898570b10a4be6ddd3f8912b386dc2afa2c2b491
 
 	public function wrefresh() {
 		$banners = D('work');
@@ -173,13 +143,13 @@ class WorkAction extends Action {
 			}
 		}
 		if ($res) {
-			    $this->success('删除成功', 'index');
+			$this -> success('删除成功', 'index');
 		} else {
 			$this -> error('删除失败');
 		}
 
 	}
-	
+
 	public function crefresh() {
 		$banners = D('work_category');
 		$res = FALSE;
@@ -194,17 +164,15 @@ class WorkAction extends Action {
 			}
 		}
 		if ($res) {
-			    $this->success('删除成功', 'index');
+			$this -> success('删除成功', 'index');
 		} else {
 			$this -> error('删除失败');
 		}
 
 	}
-	
-	
-	
-	public function category(){
-		
+
+	public function category() {
+
 		$Data = D('work_category');
 		import('ORG.Util.Page');
 		$map = "";
@@ -215,63 +183,65 @@ class WorkAction extends Action {
 		$this -> assign('list', $list);
 		$this -> assign('page', $show);
 
-		$this->display();
+		$this -> display();
 	}
-	
-	public function getcategory(){
+
+	public function getcategory() {
 		$category = D('work_category');
 		$map = "";
 		$list = $category -> where($map) -> order('orderby,dateline desc') -> select();
 		$this -> assign('clist', $list);
 	}
-	
-	public function addcategory(){
-		$this->display();
+
+	public function addcategory() {
+		$this -> display();
 	}
-	
-	public function addc(){
-		
-<<<<<<< HEAD
+
+	public function addc() {
 		$work = D("work_category");
-		
 		$work -> create();
-		
+
 		$work -> category_name = $_POST['category_name'];
 		$work -> description = $_POST['description'];
 		$work -> dateline = $_POST['dateline'];
 		$work -> orderby = $_POST['orderby'];
-		
-		if($work -> add()){
+
+		if ($work -> add()) {
 			$this -> success('数据保存成功！');
-		}else{
+		} else {
 			$this -> error('数据保存失败！');
 		}
 	}
 
-=======
-		$work = D("work_catgory");
+	public function editc() {
 		
-		$work -> create();
+		$Form = D('work_category');
 		
-		//$work -> cid = $_POST["cid"];
-		$work -> title_cn = $_POST['title_cn'];
-		$work -> title_en = $_POST['title_en'];
-		$work -> description_en =  $_POST['description_en'];
-		$work -> description_cn =  $_POST['description_cn'];
-		$work -> dateline = $_POST['dateline'];
-		$work -> orderby = $_POST['orderby'];
-		$work -> photo = $info[0]['savename'];
-		
-		$work -> add();
-		// 写入用户数据到数据库
-		$this -> success('数据保存成功！');
-		
-		
+		$map["category_id"] = $_POST['category_id'];
+
+		$data["category_name"] = $_POST['category_name'];
+
+		$data["dateline"] = $_POST['dateline'];
+		$data["description"] = $_POST['description'];
+
+		$data["orderby"] = $_POST['orderby'];
+
+		$result = $Form -> where($map) -> save($data);
+
+		if ($result) {
+			$this -> success('操作成功');
+		} else {
+			$this -> error('写入错误');
+		}
+
 	}
-	
-	
-	
-	
->>>>>>> 898570b10a4be6ddd3f8912b386dc2afa2c2b491
+
+	public function editcategorys() {
+		$Form = D('work_category');
+		$map["category_id"] = $this -> _param("cid");
+		$result = $Form -> where($map) -> select();
+		$this -> assign('data', $result);
+		$this -> display();
+	}
 
 }
