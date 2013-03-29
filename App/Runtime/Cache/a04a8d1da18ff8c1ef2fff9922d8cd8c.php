@@ -56,11 +56,9 @@
 								<img src="/Public/Uploads/News/s_<?php echo ($vo["photo"]); ?>" alt="">
 							</div>
 							<div class="span7 ml">
-								<h1><?php echo ($vo["title_cn"]); ?></h1>
+								<a href="__URL__/news/nid/<?php echo ($vo["nid"]); ?>"><h1><?php echo ($vo["title_cn"]); ?></h1></a>
 								<p>
-									<a href="__URL__/news/nid/<?php echo ($vo["nid"]); ?>">
-										<?php echo (msubstr($vo["description_cn"],0,100,'utf-8',false)); ?> 
-										</a>
+										<?php echo (msubstr($vo["description_cn"],0,100,'utf-8',false)); ?> 	
 								</p>
 								<p>
 									<?php echo ($vo["dateline"]); ?>

@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="__PUBLIC__/css/style.css">
     <!--<link rel="stylesheet/less" type="text/css"  href="__PUBLIC__/less/style.less">-->
     <!--<script type="text/javascript" src="__PUBLIC__/js/less.js"></script>-->
-    <script type="text/javascript" src="__PUBLIC__/js/sea/sea.js" data-config="__PUBLIC__/js/sea/config"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/sea/sea.js" data-config="__PUBLIC__/js/config"></script>
+    <script type="text/javascript">seajs.use('global')</script>
 </head>
 <body>
-<div class="all">
+
     <div class="header">
         <div class="nav">
             <div class="clearfix">
@@ -115,6 +116,5 @@
     </div>
     <!-- <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js"></script> -->
 
-</div>
 </body>
 </html>

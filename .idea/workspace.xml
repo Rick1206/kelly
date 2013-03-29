@@ -4,7 +4,11 @@
     <list default="true" id="8bc3a94a-15e3-4578-aaef-c48e186e1d84" name="Default" comment="" />
     <ignored path="kelly1.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/global.less" changelist="8bc3a94a-15e3-4578-aaef-c48e186e1d84" time="1364463276593" ignored="false" />
+    <file path="/global.less" changelist="8bc3a94a-15e3-4578-aaef-c48e186e1d84" time="1364538503891" ignored="false" />
+    <file path="/layout.html" changelist="8bc3a94a-15e3-4578-aaef-c48e186e1d84" time="1364532999103" ignored="false" />
+    <file path="/config.js" changelist="8bc3a94a-15e3-4578-aaef-c48e186e1d84" time="1364532886801" ignored="false" />
+    <file path="/global.js" changelist="8bc3a94a-15e3-4578-aaef-c48e186e1d84" time="1364538789566" ignored="false" />
+    <file path="$PROJECT_DIR$/App/Runtime/Cache/f331a3f0d874c4248458495ef2c2c2d1.php" changelist="8bc3a94a-15e3-4578-aaef-c48e186e1d84" time="1364538881693" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,28 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="89" selection-end="89" vertical-scroll-proportion="-0.6785714">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/Conf/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="19" selection-start="285" selection-end="291" vertical-scroll-proportion="-8.821428">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="global.less" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="global.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Public/less/global.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="20" column="23" selection-start="321" selection-end="321" vertical-scroll-proportion="-8.36">
               <folding />
             </state>
           </provider>
@@ -54,7 +40,36 @@
       <file leaf-file-name="header.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Public/less/header.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="17" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+            <state line="18" column="17" selection-start="296" selection-end="296" vertical-scroll-proportion="-0.76">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/js/global.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="28" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#153#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/App/Tpl/Index/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="28" selection-start="484" selection-end="484" vertical-scroll-proportion="0.18788628">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/js/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="22" selection-start="476" selection-end="476" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -70,12 +85,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/App/Tpl/Index/index.html" />
-        <option value="$PROJECT_DIR$/Public/js/jquery.jscrollpane.css" />
-        <option value="$PROJECT_DIR$/Public/js/sea/config.js" />
-        <option value="$PROJECT_DIR$/Public/js/jquery.lightbox.js" />
-        <option value="$PROJECT_DIR$/App/Tpl/Index/photo.html" />
-        <option value="$PROJECT_DIR$/App/Tpl/Index/about.html" />
         <option value="$PROJECT_DIR$/App/Tpl/Index/contact.html" />
         <option value="$PROJECT_DIR$/App/Tpl/Index/guestbook.html" />
         <option value="$PROJECT_DIR$/App/Tpl/Index/new_detail.html" />
@@ -84,8 +93,14 @@
         <option value="$PROJECT_DIR$/App/Tpl/Index/news.html" />
         <option value="$PROJECT_DIR$/App/Tpl/Index/news_detail.html" />
         <option value="$PROJECT_DIR$/Public/less/header.less" />
+        <option value="$PROJECT_DIR$/Public/js/sea/sea.js" />
+        <option value="$PROJECT_DIR$/Public/js/sea/sea.js.map" />
+        <option value="$PROJECT_DIR$/Public/js/sea/config.js" />
+        <option value="$PROJECT_DIR$/Public/js/config.js" />
+        <option value="$PROJECT_DIR$/Public/js/sea/plugin-text.js" />
         <option value="$PROJECT_DIR$/App/Tpl/layout.html" />
         <option value="$PROJECT_DIR$/Public/less/global.less" />
+        <option value="$PROJECT_DIR$/Public/js/global.js" />
       </list>
     </option>
   </component>
@@ -122,6 +137,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -168,7 +184,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="less" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -206,13 +222,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -227,6 +242,7 @@
       <recent name="D:\web\wamp\www\kelly1\Public\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\www\kelly\Public\js" />
       <recent name="C:\wamp\www\kelly1\App\Tpl" />
       <recent name="C:\wamp\www\kelly1\App\Tpl\Index" />
     </key>
@@ -246,7 +262,7 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
     <option name="mySSHConnectionTimeout" value="30000" />
@@ -256,7 +272,6 @@
     <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
     <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
     <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <option name="DETECT_NESTED_COPIES" value="true" />
     <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
     <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
@@ -274,14 +289,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17380661" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1744186" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -357,31 +372,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/App/Conf/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="112" selection-end="112" vertical-scroll-proportion="0.15921788" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Lib/Action/IndexAction.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="39" selection-start="1984" selection-end="2027" vertical-scroll-proportion="0.8108108" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Tpl/Index/news.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="28" selection-start="243" selection-end="243" vertical-scroll-proportion="0.1891892" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Tpl/Index/photo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="2826" selection-end="4134" vertical-scroll-proportion="0.36415362" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Tpl/Index/news_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="33" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.6303502" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/Tpl/News/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.8842505" />
@@ -411,42 +401,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="89" selection-end="89" vertical-scroll-proportion="-0.6785714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/less/header.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="17" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Tpl/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="39" selection-start="200" selection-end="200" vertical-scroll-proportion="0.023485785">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Tpl/Index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="28" selection-start="484" selection-end="484" vertical-scroll-proportion="0.023485785">
+        <state line="4" column="0" selection-start="89" selection-end="89" vertical-scroll-proportion="0.09394314">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/Conf/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="19" selection-start="285" selection-end="291" vertical-scroll-proportion="-8.821428">
+        <state line="13" column="19" selection-start="285" selection-end="291" vertical-scroll-proportion="0.3053152">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/sea/sea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="31" selection-start="6470" selection-end="6470" vertical-scroll-proportion="0.32281554">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/sea/sea.js.map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="1" selection-start="18502" selection-end="18502" vertical-scroll-proportion="0.16140777">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="22" selection-start="476" selection-end="476" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/sea/plugin-text.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="472" selection-start="1500" selection-end="1500" vertical-scroll-proportion="0.046116505">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Public/less/global.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="20" column="23" selection-start="321" selection-end="321" vertical-scroll-proportion="-8.36">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Tpl/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="81" selection-start="2682" selection-end="2682" vertical-scroll-proportion="-11.928572">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/less/header.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="17" selection-start="296" selection-end="296" vertical-scroll-proportion="-0.76">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="28" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#153#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Tpl/Index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="28" selection-start="484" selection-end="484" vertical-scroll-proportion="0.18788628">
           <folding />
         </state>
       </provider>

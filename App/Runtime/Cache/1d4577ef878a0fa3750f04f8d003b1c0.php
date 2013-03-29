@@ -63,9 +63,7 @@
 									<div class="ti">
 										Message:
 									</div>
-									<div class="mes">
-										<?php echo ($vo["umessage"]); ?>
-									</div>
+									<div class="mes"><?php echo ($vo["umessage"]); ?></div>
 								</div>
 							</div><?php endforeach; endif; else: echo "" ;endif; ?>
 						<div class="page">

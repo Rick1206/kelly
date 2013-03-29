@@ -40,7 +40,6 @@
         </div>
     </div>
 
-
 <div class="content">
     <div class="banner" id="newBanner">
         <img src="<?php echo ($bgUrl); ?>" alt="">
@@ -64,7 +63,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 
